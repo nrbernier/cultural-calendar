@@ -1,0 +1,62 @@
+# Calendar settings
+calendar:
+  name: "Culture"
+  timezone: "Europe/Zurich"
+  output: "docs/calendar.ics"
+
+# --- Films -----------------------------------------------------------------
+# Swiss cinema release dates come from TMDB (needs the TMDB_API_KEY secret).
+# If TMDB finds the wrong person, add `tmdb_id:` from the URL on themoviedb.org.
+films:
+  country: CH
+  # Used only when no Swiss date is known yet. The event is marked "CH TBC".
+  fallback_countries: [FR]
+  # Ignore films that were released more than this many days ago
+  lookback_days: 60
+
+directors:
+  - name: Wes Anderson
+  - name: Richard Linklater
+  - name: Paul Thomas Anderson
+  - name: Quentin Dupieux
+  - name: Denis Villeneuve
+  - name: Brady Corbet        # The Brutalist
+
+# --- Cinémathèque suisse -----------------------------------------------------
+# Screenings in the agenda that mention one of the directors above together with
+# "en présence" / "in Anwesenheit" / "in person".
+cinematheque:
+  enabled: true
+  pages:
+    - https://www.cinematheque.ch/f/programme/
+    - https://www.cinematheque.ch/f/agenda/
+
+# --- Festivals ---------------------------------------------------------------
+# Edit these by hand. `tentative: true` = estimated from previous years and not
+# yet announced. The event is then titled with "(?)" and marked TENTATIVE.
+# Milestone types: program, tickets, presale, lineup, or anything else.
+festivals:
+  - name: Rencontres 7e Art Lausanne
+    url: https://www.rencontres7art.ch
+    editions:
+      - start: 2027-03-04
+        end: 2027-03-14
+        tentative: true       # 2024–2026 ran early-to-mid March
+        milestones:
+          - date: 2027-02-20
+            type: tickets
+            tentative: true   # 2026 ticketing opened 21 Feb
+
+  - name: Cully Jazz Festival
+    url: https://cullyjazz.ch
+    editions:
+      - start: 2027-04-02
+        end: 2027-04-10       # per Lausanne Tourisme, not yet confirmed by the festival
+        tentative: true
+        milestones:
+          - date: 2026-12-03
+            type: lineup      # first names (2026 edition: 4 Dec)
+            tentative: true
+          - date: 2027-01-14
+            type: program     # full IN program + ticketing opens at noon (2026: 15 Jan)
+            tentative: true

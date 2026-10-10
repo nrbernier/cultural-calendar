@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Culture Calendar</title>
+<style>
+  :root { --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b675f; --accent:#b4441f; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#161513; --fg:#ece9e2; --muted:#9a958b; --accent:#e9774f; } }
+  body { background:var(--bg); color:var(--fg); font:17px/1.5 system-ui, sans-serif; margin:0; padding:48px 16px; }
+  main { max-width:520px; margin:auto; }
+  a.btn { display:block; background:var(--accent); color:#fff; text-align:center; padding:14px; border-radius:10px; text-decoration:none; font-weight:600; margin:24px 0 8px; }
+  p.small { color:var(--muted); font-size:14px; }
+  code { word-break:break-all; }
+</style>
+</head>
+<body><main>
+  <h1>Culture Calendar</h1>
+  <p>Sorties suisses de films, festivals, billetteries, séances à la Cinémathèque.</p>
+  <a class="btn" id="sub" href="calendar.ics">S'abonner</a>
+  <p class="small">Google Calendar: Autres agendas → « À partir de l'URL » → <code id="url"></code></p>
+</main>
+<script>
+  const ics = new URL("calendar.ics", location.href);
+  document.getElementById("url").textContent = ics.href;
+  document.getElementById("sub").href = ics.href.replace(/^https?:/, "webcal:");
+</script>
+</body></html>
