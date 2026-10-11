@@ -31,7 +31,7 @@ directors:
 # guests: mine = only the directors above, directors = any film-maker, all = anyone
 cinematheque:
   enabled: true
-  guests: directors
+  guests: all
   lookback_days: 30     # keep recent past screenings in the calendar
 
 # --- Festivals ---------------------------------------------------------------
