@@ -1,26 +1,11 @@
 [films]
   Wes Anderson -> TMDB person 5655 (Wes Anderson)
-    ! search.ch Untitled Wes Anderson Film: 404 Client Error: Not Found for url: https://search.ch/kino/?q=Untitled+Wes+Anderson+Film
   Richard Linklater -> TMDB person 564 (Richard Linklater)
-    ! search.ch Untitled Richard Linklater John Brinkley Project: 404 Client Error: Not Found for url: https://search.ch/kino/?q=Untitled+Richard+Linklater+John+Brinkley+Project
-    ! search.ch Untitled Richard Linklater Bill Hicks Project: 404 Client Error: Not Found for url: https://search.ch/kino/?q=Untitled+Richard+Linklater+Bill+Hicks+Project
-    ! search.ch Merrily We Roll Along: 404 Client Error: Not Found for url: https://search.ch/kino/?q=Merrily+We+Roll+Along
-    ! search.ch Hippies: 404 Client Error: Not Found for url: https://search.ch/kino/?q=Hippies
-    ! search.ch Untitled Lou Gehrig Biopic: 404 Client Error: Not Found for url: https://search.ch/kino/?q=Untitled+Lou+Gehrig+Biopic
   Paul Thomas Anderson -> TMDB person 4762 (Paul Thomas Anderson)
-    ! search.ch Cameron Winter at Carnegie Hall: 404 Client Error: Not Found for url: https://search.ch/kino/?q=Cameron+Winter+at+Carnegie+Hall
   Quentin Dupieux -> TMDB person 133398 (Quentin Dupieux)
-    ! search.ch Signaux: 404 Client Error: Not Found for url: https://search.ch/kino/?q=Signaux
-    ! search.ch Signals: 404 Client Error: Not Found for url: https://search.ch/kino/?q=Signals
-    ! search.ch Le Vertige: 404 Client Error: Not Found for url: https://search.ch/kino/?q=Le+Vertige
-    ! search.ch Vertiginous: 404 Client Error: Not Found for url: https://search.ch/kino/?q=Vertiginous
   Denis Villeneuve -> TMDB person 137427 (Denis Villeneuve)
     2026-12-16 Dune: Part Three [romandie]
-    ! search.ch Untitled James Bond Film: 404 Client Error: Not Found for url: https://search.ch/kino/?q=Untitled+James+Bond+Film
   Brady Corbet -> TMDB person 55493 (Brady Corbet)
-    ! search.ch The Origin of the World: 404 Client Error: Not Found for url: https://search.ch/kino/?q=The+Origin+of+the+World
-    ! search.ch Untitled Cai Guo-Qiang Documentary: 404 Client Error: Not Found for url: https://search.ch/kino/?q=Untitled+Cai+Guo-Qiang+Documentary
-    ! search.ch David Byrne: Who Is The Sky?: 404 Client Error: Not Found for url: https://search.ch/kino/?q=David+Byrne%3A+Who+Is+The+Sky%3F
 [festivals]
 [cinematheque]
   14 listings, 56 films
