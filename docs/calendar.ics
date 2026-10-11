@@ -6,20 +6,19 @@ REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 X-WR-TIMEZONE:Europe/Zurich
 BEGIN:VEVENT
-SUMMARY:🎬 Dune: Part Three — Denis Villeneuve (FR – CH TBC)
-DTSTART;VALUE=DATE:20261215
-DTEND;VALUE=DATE:20261216
-DTSTAMP:20261011T084120Z
+SUMMARY:🎬 Dune: Part Three — Denis Villeneuve
+DTSTART;VALUE=DATE:20261216
+DTEND;VALUE=DATE:20261217
+DTSTAMP:20261011T084715Z
 UID:f161f766f713fad7@cultural-calendar
-DESCRIPTION:Sortie FR. Nearly two decades after he seized control of the I
- mperium\, Paul Atreides is now a ruthless Emperor\, and must face the cons
- equences of his reign as old allies return\, terrifying new threats emerge
- \, and betrayal lurks in every shadow. Haunted by visions of Imperial coll
- apse and the reappearance of his long-lost love\, Paul is drawn into a swe
- eping conspiracy\, with Chani at the heart of its unfolding mystery. As en
- emies close in\, Paul must confront the true cost of power and the fate of
-  those he loves the most.
-STATUS:TENTATIVE
+DESCRIPTION:Sortie Suisse romande. Nearly two decades after he seized cont
+ rol of the Imperium\, Paul Atreides is now a ruthless Emperor\, and must f
+ ace the consequences of his reign as old allies return\, terrifying new th
+ reats emerge\, and betrayal lurks in every shadow. Haunted by visions of I
+ mperial collapse and the reappearance of his long-lost love\, Paul is draw
+ n into a sweeping conspiracy\, with Chani at the heart of its unfolding my
+ stery. As enemies close in\, Paul must confront the true cost of power and
+  the fate of those he loves the most.
 TRANSP:TRANSPARENT
 URL:https://www.themoviedb.org/movie/1170608
 END:VEVENT
@@ -27,7 +26,7 @@ BEGIN:VEVENT
 SUMMARY:🎪 Rencontres 7e Art Lausanne (?)
 DTSTART;VALUE=DATE:20270304
 DTEND;VALUE=DATE:20270315
-DTSTAMP:20261011T084120Z
+DTSTAMP:20261011T084717Z
 UID:4cdc606be8515c10@cultural-calendar
 DESCRIPTION:Dates estimées\, pas encore annoncées.
 STATUS:TENTATIVE
@@ -38,7 +37,7 @@ BEGIN:VEVENT
 SUMMARY:🎟 Billetterie ouverte: Rencontres 7e Art Lausanne (?)
 DTSTART;VALUE=DATE:20270220
 DTEND;VALUE=DATE:20270221
-DTSTAMP:20261011T084120Z
+DTSTAMP:20261011T084717Z
 UID:03386b5f7bbd0ff6@cultural-calendar
 DESCRIPTION:Date estimée.
 STATUS:TENTATIVE
@@ -49,7 +48,7 @@ BEGIN:VEVENT
 SUMMARY:🎪 Cully Jazz Festival (?)
 DTSTART;VALUE=DATE:20270402
 DTEND;VALUE=DATE:20270411
-DTSTAMP:20261011T084120Z
+DTSTAMP:20261011T084717Z
 UID:53c7fefeada38140@cultural-calendar
 DESCRIPTION:Dates estimées\, pas encore annoncées.
 STATUS:TENTATIVE
@@ -60,7 +59,7 @@ BEGIN:VEVENT
 SUMMARY:📣 Premiers noms: Cully Jazz Festival (?)
 DTSTART;VALUE=DATE:20261203
 DTEND;VALUE=DATE:20261204
-DTSTAMP:20261011T084120Z
+DTSTAMP:20261011T084717Z
 UID:c7097fa4050dd435@cultural-calendar
 DESCRIPTION:Date estimée.
 STATUS:TENTATIVE
@@ -71,7 +70,7 @@ BEGIN:VEVENT
 SUMMARY:📖 Programme: Cully Jazz Festival (?)
 DTSTART;VALUE=DATE:20270114
 DTEND;VALUE=DATE:20270115
-DTSTAMP:20261011T084120Z
+DTSTAMP:20261011T084717Z
 UID:6163788932ac7a22@cultural-calendar
 DESCRIPTION:Date estimée.
 STATUS:TENTATIVE
