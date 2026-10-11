@@ -1,0 +1,13 @@
+[films]
+  Wes Anderson -> TMDB person 5655 (Wes Anderson)
+  Richard Linklater -> TMDB person 564 (Richard Linklater)
+  Paul Thomas Anderson -> TMDB person 4762 (Paul Thomas Anderson)
+  Quentin Dupieux -> TMDB person 133398 (Quentin Dupieux)
+  Denis Villeneuve -> TMDB person 137427 (Denis Villeneuve)
+    2026-12-15 Dune: Part Three [FR]
+  Brady Corbet -> TMDB person 55493 (Brady Corbet)
+[festivals]
+[cinematheque]
+  ! https://www.cinematheque.ch/f/programme/: HTTPSConnectionPool(host='www.cinematheque.ch', port=443): Max retries exceeded with url: /f/programme/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cinematheque.ch', port=443) at 0x7f0a23e1bbc0>, 'Connection to www.cinematheque.ch timed out. (connect timeout=30)'))
+  ! https://www.cinematheque.ch/f/agenda/: HTTPSConnectionPool(host='www.cinematheque.ch', port=443): Max retries exceeded with url: /f/agenda/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cinematheque.ch', port=443) at 0x7f0a23e19130>, 'Connection to www.cinematheque.ch timed out. (connect timeout=30)'))
+wrote docs/calendar.ics (6 events)
