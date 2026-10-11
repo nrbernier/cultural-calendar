@@ -8,9 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - run: |
-          mkdir -p probe
+          rm -rf probe; mkdir -p probe
           UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36"
-          for u in "https://search.ch/cine/" "https://search.ch/cine/?q=Dune" "https://search.ch/cine/Cocorico-2/Acquarossa.fr.html" "https://search.ch/cine/coming.fr.html" "https://www.cinematheque.ch/" "https://live.cinematheque.ch/" "https://www.procinema.ch/" "https://www.lausanne-tourisme.ch/fr/agenda/"; do
+          for u in "https://live.cinematheque.ch/?interval=events" "https://live.cinematheque.ch/films/blue-moon" "https://live.cinematheque.ch/?interval=week" "https://search.ch/cine/?q=Nouvelle%20Vague" "https://search.ch/cine/?q=One%20Battle%20After%20Another"; do
             f=probe/$(echo "$u" | tr -c 'a-zA-Z0-9.' '_').html
             curl -sSL -A "$UA" -m 25 -o "$f" -w "%{http_code} %{url_effective} $u\n" "$u" >> probe/status.txt 2>&1 || echo "FAIL $u" >> probe/status.txt
           done
