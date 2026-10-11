@@ -2,7 +2,7 @@ name: Update calendar
 
 on:
   schedule:
-    - cron: "17 5 * * 1"   # Mondays ~07:17 Swiss time
+    - cron: "17 5 * * 0"   # Sundays ~07:17 Swiss time (06:17 in winter)
   workflow_dispatch:        # "Run workflow" button
   push:
     paths: [config.yaml, update.py]
