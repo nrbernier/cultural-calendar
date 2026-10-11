@@ -110,6 +110,8 @@ def searchch_date(title, director, region):
     """
     try:
         r = HTTP.get("https://search.ch/cine/", params={"q": title}, timeout=30)
+        if r.status_code == 404:  # no film by that name (yet)
+            return None
         r.raise_for_status()
     except requests.RequestException as e:
         log(f"    ! search.ch {title}: {e}")
