@@ -1,0 +1,632 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<title>ProCinema: ProCinema Home - Willkommen</title>
+
+	<!-- sibenaler mca                     -->
+	<!-- http://www.sibenaler.com          -->
+	<meta name="author" content="ProCinema">
+	<meta name="publisher" content="ProCinema">
+
+	<meta name="language" content="de">
+	<meta name="keywords" content="ProCinema: ProCinema Home - Willkommen,home">
+	<meta name="description" content="ProCinema: ProCinema Home - Willkommen">
+
+	<meta name="distribution" content="global">
+	<meta name="robots" content="index,follow">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- html no cache -->
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+
+	<!-- opengraph -->
+	<meta property="og:title" content="ProCinema: ProCinema Home - Willkommen" />
+	<meta property="og:url" content="https://www.procinema.ch/de/home/" />
+	<meta property="og:image" content="https://www.procinema.ch/img/dummy/og_fallback.jpg" />
+	<meta property="og:description" content="ProCinema: ProCinema Home - Willkommen" />
+
+	<!-- new settings 2020 -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/icon/site/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/img/icon/site/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/img/icon/site/favicon-16x16.png">
+	<link rel="manifest" href="/img/icon/site/site.webmanifest">
+	<link rel="mask-icon" href="/img/icon/site/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="/img/icon/site/favicon.ico">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="/img/icon/site/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- extend -->
+    <link href="/styles/styles.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/fonts/FontAwesome/css/all.min.css" type="text/css">
+    <script src="/js/functions.js" type="text/javascript"></script>
+    <script src="/js/jquery.min.js" type="text/javascript"></script>
+
+
+	<!-- googlefonts/ josefin sans -->
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$( ".fadhelp" ).bind( "click", function() {
+				//$(this).children('p').show();
+				$(this).find('p').toggle('fast');
+			});
+		});
+		var jsonRequests = {};
+		var urlbase = '/';
+		var lan = 'de';
+    </script>
+
+    <script>
+
+		////////////////////////////////////////////////////////////////////////////////////////////
+		// resize handler
+		$(window).on('resize orientationchange', function(e){
+		    window.resizeEvt;
+		    $(window).resize(function(){
+		        clearTimeout(window.resizeEvt);
+		        window.resizeEvt = setTimeout(function(){
+					//initSliders();
+		        }, 250);
+		    });
+			$('#layout').text($('body').width()+'px / ');
+		});
+		$(window).ready(function() {
+		$('#layout').text($('body').width()+'px / ');
+		  //initSliders();
+		});
+
+		////////////////////////////////////////////////////////////////////////////////////////////
+		// scroll top
+		$(document).ready(function(){
+			//scroll to top
+			//Check to see if the window is top if not then display button
+			$(window).scroll(function(){
+				if ($(this).scrollTop() > 100) {
+					$('#scrollToTop').fadeIn();
+				} else {
+					$('#scrollToTop').fadeOut();
+				}
+			});
+			//Click event to scroll to top
+			$('#scrollToTop').click(function(){
+				$('html, body').animate({scrollTop : 0},800);
+				return false;
+			});
+		});
+
+    </script>
+
+</head>
+
+
+
+
+<body>
+
+
+		<div id="scrollToTop" style="color:#499bd5"><i class="fa-duotone fa-solid fa-circle-caret-up"></i></div>
+
+
+<!-- header =============================== -->
+<div id="header">
+	<div>
+	    <div id="pageheader">
+			<div id="mobileservice">
+				<div id="mobileserviceopen" onClick="serviceMenuShow();"><i class="fas fa-cogs"></i></div>
+				<div id="mobileserviceclose" onClick="serviceMenuHide();"><i class="fas fa-times"></i></div>
+			</div>
+			<nav id="servicemenu">
+				<ul>
+					<li><a href="/de/" class="high">deutsch</a></li> <li><a href="/fr/" class="">français</a></li> <li><a href="/it/" class="">italiano</a></li> 				</ul>
+			</nav>
+
+			<header id="logo"><a href="/de/"><img src="/img/logo/logo.png" alt="logo"></a></header>
+
+			<div id="mobilemain">
+				<div id="mobilemainopen" onClick="mainMenuShow();"><i class="fas fa-bars"></i></div>
+				<div id="mobilemainclose" onClick="mainMenuHide();"><i class="fas fa-times"></i></div>
+			</div>
+			<nav id="mainmenu">
+				<ul>
+					<li><a href="/de/about/mission/" class="">ABOUT</a></li><li><a href="/de/services/portfolio/" class="">SERVICES</a></li><li><a href="/de/statistics/filmdb/" class="">STATISTIKEN</a></li><li><a href="/de/vouchers/perfect/" class="">KINOGUTSCHEINE</a></li><li><a href="/de/login/account/" class="">LOGIN</a></li>				</ul>
+			</nav>
+
+		</div>
+	</div>
+</div>
+
+
+<div id="wrapper">
+	<div id="page">
+
+		<!-- main =============================== -->
+		<main id="pagemain">
+
+
+			<section id="homesection">
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1020817/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">15.10.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date">14.10.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date">15.10.2026</span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1020817.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1022509/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">28.05.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date">17.09.2025</span></p>
+								<p><span class="label">ICH:</span><span class="date">15.10.2026</span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1022509.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1022571/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date"></span></p>
+								<p><span class="label">FCH:</span><span class="date">14.10.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1022571.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1022604/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date"></span></p>
+								<p><span class="label">FCH:</span><span class="date">07.10.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1022604.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1023046/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">08.10.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date">23.09.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date">26.11.2026</span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1023046.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1023305/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">08.10.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date">07.10.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date">08.10.2026</span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1023305.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1023700/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">25.03.2027</span></p>
+								<p><span class="label">FCH:</span><span class="date">14.10.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1023700.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1023826/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">15.10.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date">14.10.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date">15.10.2026</span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1023826.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1023934/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date"></span></p>
+								<p><span class="label">FCH:</span><span class="date">14.10.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1023934.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1024142/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">08.10.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date"></span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1024142.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1024431/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">07.10.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date">07.10.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date">no release</span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1024431.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1024550/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">08.10.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date">02.12.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1024550.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1024593/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">08.10.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date">17.02.2027</span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1024593.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1024602/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">17.12.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date">07.10.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1024602.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1024608/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">08.10.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date"></span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1024608.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1024730/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">08.10.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date">28.10.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date">05.11.2026</span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1024730.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1024751/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date"></span></p>
+								<p><span class="label">FCH:</span><span class="date">14.10.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1024751.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1024759/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date"></span></p>
+								<p><span class="label">FCH:</span><span class="date">14.10.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1024759.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1024784/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">10.12.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date">14.10.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date">14.01.2027</span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1024784.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1024792/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">18.06.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date">14.10.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1024792.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1024804/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">15.10.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date"></span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1024804.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1024832/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">15.10.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date">10.02.2027</span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1024832.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1024954/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date"></span></p>
+								<p><span class="label">FCH:</span><span class="date">07.10.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1024954.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1024992/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">15.10.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date">10.03.2027</span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1024992.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1024993/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">15.10.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date"></span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1024993.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1025106/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">15.10.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date"></span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1025106.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1025140/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date">08.10.2026</span></p>
+								<p><span class="label">FCH:</span><span class="date"></span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1025140.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1025149/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date"></span></p>
+								<p><span class="label">FCH:</span><span class="date">07.10.2026</span></p>
+								<p><span class="label">ICH:</span><span class="date"></span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1025149.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+			    <article class="homefilm">
+					<div class="poster"><img onClick="toggleHomeInfo(this);" src="/db_data/mox/1025447/artw/artw_p.jpg"></div>
+					<div class="details">
+						<div class="container">
+							<div class="dates">
+								<p><span class="label">DCH:</span><span class="date"></span></p>
+								<p><span class="label">FCH:</span><span class="date"></span></p>
+								<p><span class="label">ICH:</span><span class="date">08.10.2026</span></p>
+							</div>
+							<div class="more">[<a href="/de/statistics/filmdb/1025447.html">MEHR ZUM FILM</a>]</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</article>
+				<div class="clear"></div>
+				<div id="homeselector">
+					<a href="/de/home/" class="high">Schweiz</a> | 
+					<a href="/de/home/dch.html" class="">Deutschschweiz</a> | 
+					<a href="/de/home/fch.html" class="">Suisse romande</a> | 
+					<a href="/de/home/ich.html" class="">Tessin</a>
+				</div>
+			</section>
+
+
+
+
+
+
+		</main>
+	</div>
+</div>
+
+
+<!-- footer =============================== -->
+<footer id="pagefooter">
+	<div id="footer_wrapper">
+		<div id="footer">
+			<div class="footerblock">
+				<div class="footerblocktit">KONTAKT:</div>
+				ProCinema<br>
+				<nobr>Postfach 399</nobr><br>
+				<nobr>3000 Bern 14</nobr><br>
+				<br>
+				<nobr>+41 31 387 37 00</nobr><br>
+
+			</div>
+			<div class="footerblock">
+				<div class="footerblocktit">SERVICE:</div>
+				<nobr><a href="/de/about/contact/">STANDORT</a></nobr><br>
+				<nobr><a href="/de/service/gdpr/">DATENSCHUTZ</a></nobr><br>
+				<nobr><a href="/de/service/agb/">AGB</a></nobr><br>
+				<nobr><a href="/de/service/imprint/">IMPRESSUM</a></nobr><br>
+				<br>
+				<nobr>&copy; ProCinema</nobr>
+			</div>
+
+			<div class="footerblock">
+				<div class="footerblocktit">MEINE DATEN:</div>
+								<a href="/de/login/account/" rel=nofollow>LOGIN</a><br>			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</footer>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X1C03C2837"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X1C03C2837');
+</script>
+
+
+
+<div id="cookieConsent">
+  <div id="cookieConsentDisclaimer">Wir verwenden Cookies und ähnliche Technologien, um das Nutzererlebnis auf unserer Website zu verbessern. Weitere Informationen finden Sie in unserer <a href="/de/service/gdpr/">Datenschutzerklärung</a>. Durch die weitere Nutzung dieser Website stimmen Sie unserer Verwendung von Cookies und ähnlichen Technologien zu.</div>
+  <div id="cookieConsentButton" onClick="$.getJSON('/db_front/ajax_public.php?cookieconsent=1');$('#cookieConsent').hide();return false;">Hinweis schliessen</div>
+</div>
+
+</body>
+</html>
+
+
+
