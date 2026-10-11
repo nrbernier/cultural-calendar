@@ -171,7 +171,7 @@ def film_events(cfg):
                 f"🎬 {title} — {d['name']}{suffix}",
                 when,
                 key=f"film|{m['id']}",
-                description=f"Sortie {label}. {m.get('overview', '')}".strip(),
+                description=f"Sortie {label}.",
                 url=f"https://www.themoviedb.org/movie/{m['id']}",
                 tentative=not confirmed,
             ))
