@@ -1,0 +1,18 @@
+name: probe
+on: push
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: |
+          mkdir -p probe
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36"
+          for u in "https://search.ch/cine/" "https://search.ch/cine/?q=Dune" "https://search.ch/cine/Cocorico-2/Acquarossa.fr.html" "https://search.ch/cine/coming.fr.html" "https://www.cinematheque.ch/" "https://live.cinematheque.ch/" "https://www.procinema.ch/" "https://www.lausanne-tourisme.ch/fr/agenda/"; do
+            f=probe/$(echo "$u" | tr -c 'a-zA-Z0-9.' '_').html
+            curl -sSL -A "$UA" -m 25 -o "$f" -w "%{http_code} %{url_effective} $u\n" "$u" >> probe/status.txt 2>&1 || echo "FAIL $u" >> probe/status.txt
+          done
+          git config user.name bot; git config user.email bot@users.noreply.github.com
+          git add probe; git commit -qm probe; git push
