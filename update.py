@@ -202,7 +202,7 @@ def guest_of(sentence, made_by, directors, mode):
     role = re.search(r"en présence d(?:u|e la|es) (?:réalisat|cinéaste)\w*\s*(.*)", sentence, re.I)
     if role:   # "du réalisateur" = the film's director; "du cinéaste Wim Wenders" names them
         name = re.split(r",| et | pour | qui | lors ", role[1])[0].strip() or made_by
-    elif named := re.search(r"en présence de (?:l[ae] |l')?(.+)", sentence, re.I):
+    elif named := re.search(r"en présence de (.+)", sentence, re.I):
         name = re.split(r",| et | pour | qui | lors ", named[1])[0].strip()
     else:
         return None
@@ -284,7 +284,7 @@ def cinematheque_events(cfg):
                 continue
             ev = Event()
             ev.add("uid", uid(f"cs|{url}|{start:%Y%m%d%H%M}"))
-            ev.add("summary", f"🎥 {title} — {who} en personne (Cinémathèque)")
+            ev.add("summary", f"🎥 {title} — en présence de {who} (Cinémathèque)")
             ev.add("dtstart", start, parameters={"TZID": tz})
             ev.add("dtend", start + dt.timedelta(hours=2, minutes=30), parameters={"TZID": tz})
             ev.add("dtstamp", dt.datetime.now(dt.timezone.utc))
