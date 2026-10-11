@@ -23,7 +23,7 @@ from icalendar import Calendar, Event
 TMDB = "https://api.themoviedb.org/3"
 TODAY = dt.date.today()
 HTTP = requests.Session()
-HTTP.headers["User-Agent"] = "cultural-calendar (personal iCal feed)"
+HTTP.headers["User-Agent"] = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36"
 
 MILESTONE_LABELS = {
     "tickets": "🎟 Billetterie ouverte",
@@ -92,9 +92,41 @@ def release_date(release_dates, country):
     return None
 
 
+# --- Swiss regional dates (search.ch) ----------------------------------------
+
+REGIONS = {
+    "romandie": r"Romandie|Suisse romande|Westschweiz",
+    "deutschschweiz": r"Deutschschweiz|Suisse allemande",
+    "ticino": r"Italienische Schweiz|Suisse italienne|Svizzera italiana",
+}
+SWISS_DATE = re.compile(r"(\d{2})\.(\d{2})\.(\d{4})\s*\(([^)]+)\)")
+
+
+def searchch_date(title, director, region):
+    """Regional Swiss release date from search.ch's cinema guide, or None.
+
+    A search that matches a single film redirects straight to its page; the page
+    must name the director, so a homonym is never picked up.
+    """
+    try:
+        r = HTTP.get("https://search.ch/cine/", params={"q": title}, timeout=30)
+        r.raise_for_status()
+    except requests.RequestException as e:
+        log(f"    ! search.ch {title}: {e}")
+        return None
+    text = BeautifulSoup(r.text, "html.parser").get_text("\n", strip=True)
+    if fold(director.split()[-1]) not in fold(text):
+        return None
+    for d, m, y, where in SWISS_DATE.findall(text):
+        if re.search(REGIONS[region], where, re.I):
+            return dt.date(int(y), int(m), int(d))
+    return None
+
+
 def film_events(cfg):
     films = cfg.get("films", {})
     country = films.get("country", "CH")
+    region = films.get("region")
     fallbacks = films.get("fallback_countries", [])
     cutoff = TODAY - dt.timedelta(days=films.get("lookback_days", 60))
     events = []
@@ -109,28 +141,37 @@ def film_events(cfg):
             if m.get("job") != "Director" or m["id"] in seen:
                 continue
             seen.add(m["id"])
-            # Skip old films early to save API calls. Undated = upcoming.
+            # Skip old films early to save requests. Undated = upcoming.
             if m.get("release_date") and dt.date.fromisoformat(m["release_date"]) < cutoff - dt.timedelta(days=365):
                 continue
 
-            rd = tmdb(f"/movie/{m['id']}/release_dates")
-            when, where = release_date(rd, country), country
-            for fb in fallbacks:
-                if when:
-                    break
-                when, where = release_date(rd, fb), fb
+            title = m.get("original_title") or m["title"]
+            when, where = None, None
+            if region:
+                for q in dict.fromkeys([title, m["title"]]):
+                    if when := searchch_date(q, d["name"], region):
+                        where = region
+                        break
+            if not when:
+                rd = tmdb(f"/movie/{m['id']}/release_dates")
+                for c in [country, *fallbacks]:
+                    if when := release_date(rd, c):
+                        where = c
+                        break
             if not when or when < cutoff:
                 continue
 
-            title = m.get("original_title") or m["title"]
-            suffix = "" if where == country else f" ({where} – {country} TBC)"
+            confirmed = where in (region, country)
+            suffix = "" if confirmed else f" ({where} – CH TBC)"
+            label = {"romandie": "Suisse romande", "deutschschweiz": "Deutschschweiz",
+                     "ticino": "Svizzera italiana"}.get(where, where)
             events.append(all_day(
                 f"🎬 {title} — {d['name']}{suffix}",
                 when,
                 key=f"film|{m['id']}",
-                description=f"Sortie {where}. {m.get('overview', '')}".strip(),
+                description=f"Sortie {label}. {m.get('overview', '')}".strip(),
                 url=f"https://www.themoviedb.org/movie/{m['id']}",
-                tentative=where != country,
+                tentative=not confirmed,
             ))
             log(f"    {when} {title} [{where}]")
     return events
@@ -138,74 +179,93 @@ def film_events(cfg):
 
 # --- Cinémathèque suisse -------------------------------------------------------
 
-PRESENCE = re.compile(r"en présence|en presence|in anwesenheit|in person|rencontre avec", re.I)
+CS = "https://live.cinematheque.ch/"
 MONTHS = {m: i for i, m in enumerate(
     "janvier février mars avril mai juin juillet août septembre octobre novembre décembre".split(), 1)}
-DATE_NUM = re.compile(r"\b(\d{1,2})\.(\d{1,2})\.(\d{2,4})\b")
-DATE_TXT = re.compile(r"\b(\d{1,2})(?:er)?\s+(" + "|".join(MONTHS) + r")(?:\s+(\d{4}))?", re.I)
-TIME = re.compile(r"\b(\d{1,2})[h:](\d{2})\b")
+MONTH_RE = "|".join(MONTHS)
+PRESENCE = re.compile(r"[^.\n]*\ben présence\b[^.\n]*", re.I)
+SESSION = re.compile(rf"(\d{{1,2}})(?:er)?\s+({MONTH_RE})\s+(\d{{4}})\s+(\d{{1,2}}):(\d{{2}})", re.I)
+DAY_MONTH = re.compile(rf"(\d{{1,2}})(?:er)?\s+({MONTH_RE})", re.I)
 
 
 def fold(s):
     return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()
 
 
-def parse_date(text):
-    if m := DATE_NUM.search(text):
-        d, mo, y = map(int, m.groups())
-        return dt.date(y + 2000 if y < 100 else y, mo, d)
-    if m := DATE_TXT.search(text):
-        d, mo, y = int(m[1]), MONTHS[m[2].lower()], m[3]
-        year = int(y) if y else TODAY.year + (1 if mo < TODAY.month - 1 else 0)
-        return dt.date(year, mo, d)
-    return None
+def get_soup(url):
+    r = HTTP.get(url, timeout=30)
+    r.raise_for_status()
+    return BeautifulSoup(r.text, "html.parser")
 
 
 def cinematheque_events(cfg):
-    cc = cfg.get("cinematheque", {})
-    if not cc.get("enabled"):
-        return []
-    names = {d["name"]: fold(d["name"]) for d in cfg.get("directors", [])}
-    events, found = [], set()
+    """Screenings at the Cinémathèque announced 'en présence' of one of the directors.
 
-    for page in cc.get("pages", []):
+    Crawls the programme's cycles, then each film page, which carries lines like
+    "Séance du 30 septembre en présence du réalisateur" and a list of sessions.
+    """
+    if not cfg.get("cinematheque", {}).get("enabled"):
+        return []
+    tz = cfg["calendar"]["timezone"]
+    directors = [d["name"] for d in cfg.get("directors", [])]
+
+    index = get_soup(CS + "?interval=events")
+    lists = {CS} | {requests.compat.urljoin(CS, a["href"]) for a in index.find_all("a", href=True)
+                    if "category=" in a["href"]}
+    films = set()
+    for url in lists:
         try:
-            r = HTTP.get(page, timeout=30)
-            r.raise_for_status()
+            soup = index if url == CS else get_soup(url)
         except requests.RequestException as e:
-            log(f"  ! {page}: {e}")
+            log(f"  ! {url}: {e}")
             continue
-        soup = BeautifulSoup(r.text, "html.parser")
-        # Smallest blocks that mention both a director and a presence keyword
-        for el in soup.find_all(["article", "li", "div", "section", "tr"]):
-            text = el.get_text(" ", strip=True)
-            if len(text) > 1500 or not PRESENCE.search(text):
+        films |= {requests.compat.urljoin(CS, a["href"]).split("?")[0]
+                  for a in soup.find_all("a", href=True) if "/films/" in a["href"]}
+    log(f"  {len(lists)} listings, {len(films)} films")
+
+    events = []
+    for url in sorted(films):
+        try:
+            text = get_soup(url).get_text("\n", strip=True)
+        except requests.RequestException as e:
+            log(f"  ! {url}: {e}")
+            continue
+        made_by = re.search(r"\nDe\n(.+)", text)
+        made_by = made_by[1] if made_by else ""
+        title = text.split("|")[0].strip()
+        sessions = [(dt.datetime(int(y), MONTHS[mo.lower()], int(d), int(h), int(mi)))
+                    for d, mo, y, h, mi in SESSION.findall(text.split("Séance(s)")[-1].replace("\n", " "))]
+
+        # Which of our directors is present, and on which days ("Séance du 30 septembre")
+        who, days, note = None, set(), ""
+        for sentence in {s.strip() for s in PRESENCE.findall(text)}:
+            named = next((n for n in directors if fold(n) in fold(sentence)), None)
+            if not named and re.search(r"réalisat|cinéaste", sentence, re.I):
+                named = next((n for n in directors if fold(n) in fold(made_by)), None)
+            if not named:
                 continue
-            who = next((n for n, f in names.items() if f in fold(text)), None)
-            if not who or any(who in fold(c.get_text(" ")) and PRESENCE.search(c.get_text(" "))
-                              for c in el.find_all(["article", "li", "div", "section", "tr"])):
-                continue  # a child block matches too; use the innermost one
-            day = parse_date(text)
-            if not day or day < TODAY or (who, day) in found:
+            who = named
+            if day := DAY_MONTH.search(sentence):
+                days.add((int(day[1]), MONTHS[day[2].lower()]))
+                note = sentence
+            note = note or sentence
+        if not who:
+            continue
+        # No day given: the guest could be at any of the sessions, so list them all
+        for start in sorted({s for s in sessions if not days or (s.day, s.month) in days}):
+            if start.date() < TODAY:
                 continue
-            found.add((who, day))
-            link = el.find("a", href=True)
-            url = requests.compat.urljoin(page, link["href"]) if link else page
-            summary = f"🎥 Cinémathèque: {who} en personne"
-            ev = all_day(summary, day, key=f"cs|{who}|{day}", description=text[:500], url=url)
-            if t := TIME.search(text):
-                start = dt.datetime(day.year, day.month, day.day, int(t[1]), int(t[2]))
-                ev = Event()
-                ev.add("uid", uid(f"cs|{who}|{day}"))
-                ev.add("summary", summary)
-                ev.add("dtstart", start, parameters={"TZID": cfg["calendar"]["timezone"]})
-                ev.add("dtend", start + dt.timedelta(hours=2, minutes=30),
-                       parameters={"TZID": cfg["calendar"]["timezone"]})
-                ev.add("dtstamp", dt.datetime.now(dt.timezone.utc))
-                ev.add("description", text[:500])
-                ev.add("url", url)
+            ev = Event()
+            ev.add("uid", uid(f"cs|{url}|{start:%Y%m%d%H%M}"))
+            ev.add("summary", f"🎥 {title} — {who} en personne (Cinémathèque)")
+            ev.add("dtstart", start, parameters={"TZID": tz})
+            ev.add("dtend", start + dt.timedelta(hours=2, minutes=30), parameters={"TZID": tz})
+            ev.add("dtstamp", dt.datetime.now(dt.timezone.utc))
+            ev.add("location", "Cinémathèque suisse – Capitole, Av. du Théâtre 6, Lausanne")
+            ev.add("description", note)
+            ev.add("url", url)
             events.append(ev)
-            log(f"    {day} {who} @ Cinémathèque")
+            log(f"    {start} {title}: {who}")
     return events
 
 
