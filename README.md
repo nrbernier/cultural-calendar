@@ -5,7 +5,7 @@ A subscribable iCal feed with:
 - Cinémathèque suisse screenings with one of them present
 - Festival dates + program/ticketing dates (hand-edited in `config.yaml`)
 
-Rebuilt every Monday by GitHub Actions, served by GitHub Pages.
+Rebuilt every Sunday by GitHub Actions, served by GitHub Pages.
 
 ## Setup (once)
 1. Get a free TMDB API key: themoviedb.org → Settings → API.
