@@ -1,8 +1,5 @@
-200 https://search.ch/kino/Z%C3%BCrich https://search.ch/cine/
-200 https://search.ch/kino/Dune-Part-Three https://search.ch/cine/?q=Dune
-200 https://search.ch/cine/Cocorico-2.fr.html https://search.ch/cine/Cocorico-2/Acquarossa.fr.html
-404 https://search.ch/cine/coming.fr.html https://search.ch/cine/coming.fr.html
-200 https://www.cinematheque.ch/ https://www.cinematheque.ch/
-200 https://live.cinematheque.ch/ https://live.cinematheque.ch/
-200 https://www.procinema.ch/de/ https://www.procinema.ch/
-404 https://www.lausanne-tourisme.ch/fr/agenda/ https://www.lausanne-tourisme.ch/fr/agenda/
+200 https://live.cinematheque.ch/?interval=events https://live.cinematheque.ch/?interval=events
+200 https://live.cinematheque.ch/films/blue-moon https://live.cinematheque.ch/films/blue-moon
+200 https://live.cinematheque.ch/?interval=week https://live.cinematheque.ch/?interval=week
+200 https://search.ch/kino/Nouvelle-Vague https://search.ch/cine/?q=Nouvelle%20Vague
+200 https://search.ch/kino/?q=One%20Battle%20After%20Another https://search.ch/cine/?q=One%20Battle%20After%20Another

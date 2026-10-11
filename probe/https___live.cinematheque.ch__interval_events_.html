@@ -1,0 +1,3818 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <script defer>
+    // Ensure the dark mode will be set (or not) depending on the user preferences
+    const getCookie = (cName) => {
+      const name = `${cName}=`;
+      const decodedCookie = decodeURIComponent(document.cookie);
+      const ca = decodedCookie.split(';');
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return '';
+    };
+
+    const cookie = getCookie('darkMode');
+    const htmlTag = document.querySelector('html');
+
+    if (cookie) {
+      htmlTag?.classList?.add('dark');
+    } else {
+      htmlTag?.classList?.remove('dark');
+    }
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description"
+        content="Découvrez le programme de la Cinémathèque suisse au cinéma Capitole à Lausanne : rétrospectives, hommages, avant-premières, films restaurés, ciné-concerts, rencontres et événements dans les deux salles du Capitole.">
+
+  <title>Films à l&#039;affiche | Cinémathèque suisse</title>
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://live.cinematheque.ch/dist/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://live.cinematheque.ch/dist/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://live.cinematheque.ch/dist/favicons/favicon-16x16.png">
+  <link rel="manifest" href="https://live.cinematheque.ch/dist/favicons/site.webmanifest" crossorigin="use-credentials">
+  <link rel="mask-icon" href="https://live.cinematheque.ch/dist/favicons/safari-pinned-tab.svg" color="#006BB4">
+  <meta name="msapplication-TileColor" content="#006BB4">
+  <meta name="msapplication-config" content="https://live.cinematheque.ch/dist/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#006BB4">
+  <!-- End Favicons -->
+
+    <meta property="og:type" content="website" />
+  <meta property="og:title" content="Films à l'affiche" />
+  <meta property="og:url" content="https://live.cinematheque.ch" />
+  <meta property="og:image" content="https://live.cinematheque.ch/images/projections.jpeg" />
+  <meta property="og:site_name" content="Cinémathèque Suisse" />
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Films à l'affiche"/>
+  <meta name="twitter:site" content="@cinemathequech"/>
+  <meta name="twitter:image" content="https://live.cinematheque.ch/images/projections.jpeg"/>
+
+  <link rel="stylesheet" href="https://live.cinematheque.ch/dist/styles.css">
+
+      <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setCookieDomain", "*.cinematheque.ch"]);
+      _paq.push(["setDomains", ["*.cinematheque.ch","*.cinematheque.production.antistatique.net","*.live.cinematheque.ch","*.live.cinematheque.production.antistatique.net"]]);
+      _paq.push(["enableCrossDomainLinking"]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://cinematheque-suisse.matomo.cloud/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src='//cdn.matomo.cloud/cinematheque-suisse.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
+      <!-- Matomo Tag Manager -->
+      <script>
+        var _mtm = window._mtm = window._mtm || [];
+        _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src='https://cdn.matomo.cloud/cinematheque-suisse.matomo.cloud/container_uRIaRCOm.js'; s.parentNode.insertBefore(g,s);
+      </script>
+      <!-- End Matomo Tag Manager -->
+      <!-- Privacy-friendly analytics by Plausible -->
+      <script async src="https://plausible.io/js/pa-jzrBnb0-rj9jJHbpHYq3o.js"></script>
+      <script>
+        window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+        plausible.init()
+      </script>
+      <!-- End Plausible Analytics -->
+  </head>
+<body class="dark:bg-gray-890">
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-5PG9L9S"
+    height="0" width="0" style="display:none;visibility:hidden">
+  </iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="flex flex-col min-h-screen overflow-hidden antialiased">
+  <header
+  class="fixed z-10 hidden w-1/4 h-screen xl:w-100 md:block"
+  data-immerser=1>
+  <div
+    class="absolute flex flex-col justify-between h-screen"
+    data-immerser-solid="header"
+  >
+    <div class="px-6 pt-6">
+      <a href="https://www.cinematheque.ch" class="w-full">
+        <span class="sr-only">Accéder à la page principale</span>
+        <img
+          src="/dist/images/logo.svg"
+          alt="Logo Cinémathèque"
+          class="logo"
+          width="196"
+          height="110"
+        />
+        <img
+          src="/dist/images/logo-dark.svg"
+          alt="Logo Cinémathèque"
+          class="logo dark"
+          width="196"
+          height="110"
+        />
+      </a>
+    </div>
+    <div class="px-6 pb-6 space-y-4">
+      <nav class="space-y-4">
+
+        <ul aria-label="Menu principal" id="main-navigation">
+
+                                    <li role="menuitem" aria-current="">
+                                  <button
+                    type="button"
+                    class="nav-link h-400 link-big-menu"
+                    aria-controls="bigMenu"
+                    data-link-slug="la-cinematheque"
+                  >
+                    La Cinémathèque
+                  </button>
+                              </li>
+                          <li role="menuitem" aria-current="page">
+                                  <a
+                    href="https://live.cinematheque.ch/"
+                    class="nav-link h-400 active"
+                  >
+                    Projections
+                  </a>
+                              </li>
+                          <li role="menuitem" aria-current="">
+                                  <button
+                    type="button"
+                    class="nav-link h-400 link-big-menu"
+                    aria-controls="bigMenu"
+                    data-link-slug="collections"
+                  >
+                    Collections
+                  </button>
+                              </li>
+                          <li role="menuitem" aria-current="">
+                                  <a
+                    href="https://www.cinematheque.ch/actualites"
+                    class="nav-link h-400"
+                  >
+                    Actualités
+                  </a>
+                              </li>
+                          <li role="menuitem" aria-current="">
+                                  <button
+                    type="button"
+                    class="nav-link h-400 link-big-menu"
+                    aria-controls="bigMenu"
+                    data-link-slug="infos-pratiques"
+                  >
+                    Infos pratiques
+                  </button>
+                              </li>
+                          <li role="menuitem" aria-current="">
+                                  <button
+                    type="button"
+                    class="nav-link h-400 link-big-menu"
+                    aria-controls="bigMenu"
+                    data-link-slug="services"
+                  >
+                    Services
+                  </button>
+                              </li>
+                              </ul>
+        <ul aria-label="Menu secondaire">
+                                    <li role="menuitem" aria-current="">
+                <a
+                  href="https://www.cinematheque.ch/services/demandes-en-ligne"
+                  class="nav-link p-300"
+                >
+                  Demandes en ligne
+                </a>
+              </li>
+                          <li role="menuitem" aria-current="">
+                <a
+                  href="https://www.cinematheque.ch/services/presse"
+                  class="nav-link p-300"
+                >
+                  Presse
+                </a>
+              </li>
+                          <li role="menuitem" aria-current="">
+                <a
+                  href="https://www.cinematheque.ch/infos-pratiques/contact"
+                  class="nav-link p-300"
+                >
+                  Contact
+                </a>
+              </li>
+                              </ul>
+      </nav>
+      <div class="relative flex space-x-2">
+        <button
+          type="button"
+          class="btn btn-tertiary btn-md btn-icon-right lang-btn"
+        >
+          <span>FR</span>
+          <svg class="icon transform transition-all duration-300 icon-chevron-bottom" aria-hidden="true">
+    <use xlink:href="#chevron-bottom"></use>
+  </svg>
+        </button>
+        <ul
+          aria-label="Menu de langues"
+          class="absolute flex language-anim-out space-x-2 lang-menu"
+        >
+                      <li class="invisible">
+                              <button disabled class="btn btn-tertiary btn-md">
+                  <span>EN</span>
+                </button>
+                          </li>
+                      <li class="invisible">
+                              <button disabled class="btn btn-tertiary btn-md">
+                  <span>IT</span>
+                </button>
+                          </li>
+                      <li class="invisible">
+                              <button disabled class="btn btn-tertiary btn-md">
+                  <span>DE</span>
+                </button>
+                          </li>
+                  </ul>
+        <button
+          type="button"
+          class="btn btn-tertiary btn-md absolute hidden dark-mode-btn dark"
+          data-domain="cinematheque.ch"
+        >
+          <svg class="icon icon-sun" aria-hidden="true">
+    <use xlink:href="#sun"></use>
+  </svg>
+        </button>
+        <button
+          type="button"
+          class="btn btn-tertiary btn-md absolute dark-mode-btn"
+          data-domain="cinematheque.ch"
+        >
+          <svg class="icon icon-moon" aria-hidden="true">
+    <use xlink:href="#moon"></use>
+  </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<header class="relative md:hidden">
+  <div class="flex justify-between px-3 py-2 align-middle dark:bg-gray-890">
+    <a href="https://www.cinematheque.ch" class="w-full flex">
+      <img
+        src="/dist/images/logo-mobile.svg"
+        alt="Logo Cinémathèque"
+        class="logo"
+        width="211"
+        height="21"
+      />
+      <img
+        src="/dist/images/logo-mobile-dark.svg"
+        alt="Logo Cinémathèque"
+        class="logo dark"
+        width="211"
+        height="21"
+      />
+    </a>
+    <button
+      type="button"
+      class="btn btn-tertiary btn-lg btn-icon-lg btn-menu-mobile"
+      aria-expanded="false"
+      aria-controls="mobileMenu"
+    >
+      <svg class="icon icon-menu" aria-hidden="true">
+    <use xlink:href="#menu"></use>
+  </svg>
+    </button>
+  </div>
+  <div
+  id="mobileMenu"
+  data-open-selector=".btn-menu-mobile"
+  data-close-selector=".overlay-close"
+  class="fixed top-0 bottom-0 left-0 z-50 w-screen cin-min-h-screen overlay"
+  aria-modal="true"
+  aria-hidden="true"
+>
+              <button
+        type="button"
+        class="btn btn-white btn-lg btn-icon-lg overlay-close absolute top-2 md:top-6 right-3 md:right-6 z-10"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <svg class="icon icon-cross-small" aria-hidden="true">
+    <use xlink:href="#cross-small"></use>
+  </svg>
+      </button>
+      <div class="relative flex flex-col h-full dark:bg-gray-890">
+        <div class="relative flex flex-col h-full dark:bg-gray-890">
+                    <div
+            class="absolute inset-0 bg-gray-890 overlay-animation"
+            aria-hidden="true"
+          ></div>
+        <div class="bg-gray-100 h-14 dark:bg-gray-890" aria-hidden="true"></div>
+        <div class="flex-grow bg-white dark:bg-gray-890">
+          <div class="px-3">
+            <nav class="py-8 space-y-8">
+              <ul class="relative space-y-1" aria-label="Menu principal">
+                <script>
+                  function bigMenuMobileAnim(slug) {
+                    const el = document.getElementById(`mobile-big-menu-${slug}`);
+                    if (el) {
+                      el.classList.add('list-big-menu-mobile-anim');
+                    }
+                  }
+                </script>
+                                                      <li role="menuitem" aria-current="">
+                                              <button
+                          type="button"
+                          class="nav-link btn-big-menu-mobile text-6xl leading-9.5 tracking-tight-1.1 font-bold"
+                          aria-expanded="false"
+                          aria-controls="mobileBigMenu"
+                          data-link-slug="la-cinematheque"
+                          onclick="bigMenuMobileAnim(la-cinematheque)"
+                        >
+                          La Cinémathèque
+                        </button>
+                                          </li>
+                                      <li role="menuitem" aria-current="page">
+                                              <a
+                          href="https://live.cinematheque.ch/"
+                          class="nav-link text-6xl leading-9.5 tracking-tight-1.1 font-bold active"
+                        >
+                          Projections
+                        </a>
+                                          </li>
+                                      <li role="menuitem" aria-current="">
+                                              <button
+                          type="button"
+                          class="nav-link btn-big-menu-mobile text-6xl leading-9.5 tracking-tight-1.1 font-bold"
+                          aria-expanded="false"
+                          aria-controls="mobileBigMenu"
+                          data-link-slug="collections"
+                          onclick="bigMenuMobileAnim(collections)"
+                        >
+                          Collections
+                        </button>
+                                          </li>
+                                      <li role="menuitem" aria-current="">
+                                              <a
+                          href="https://www.cinematheque.ch/actualites"
+                          class="nav-link text-6xl leading-9.5 tracking-tight-1.1 font-bold"
+                        >
+                          Actualités
+                        </a>
+                                          </li>
+                                      <li role="menuitem" aria-current="">
+                                              <button
+                          type="button"
+                          class="nav-link btn-big-menu-mobile text-6xl leading-9.5 tracking-tight-1.1 font-bold"
+                          aria-expanded="false"
+                          aria-controls="mobileBigMenu"
+                          data-link-slug="infos-pratiques"
+                          onclick="bigMenuMobileAnim(infos-pratiques)"
+                        >
+                          Infos pratiques
+                        </button>
+                                          </li>
+                                      <li role="menuitem" aria-current="">
+                                              <button
+                          type="button"
+                          class="nav-link btn-big-menu-mobile text-6xl leading-9.5 tracking-tight-1.1 font-bold"
+                          aria-expanded="false"
+                          aria-controls="mobileBigMenu"
+                          data-link-slug="services"
+                          onclick="bigMenuMobileAnim(services)"
+                        >
+                          Services
+                        </button>
+                                          </li>
+                                                </ul>
+              <ul class="relative space-y-2" aria-label="Menu secondaire">
+                                                      <li role="menuitem" aria-current="">
+                      <a
+                        href="https://www.cinematheque.ch/services/demandes-en-ligne"
+                        class="nav-link p-300 space-y-6"
+                      >
+                        Demandes en ligne
+                      </a>
+                    </li>
+                                      <li role="menuitem" aria-current="">
+                      <a
+                        href="https://www.cinematheque.ch/services/presse"
+                        class="nav-link p-300 space-y-6"
+                      >
+                        Presse
+                      </a>
+                    </li>
+                                      <li role="menuitem" aria-current="">
+                      <a
+                        href="https://www.cinematheque.ch/infos-pratiques/contact"
+                        class="nav-link p-300 space-y-6"
+                      >
+                        Contact
+                      </a>
+                    </li>
+                                                </ul>
+            </nav>
+            <div class="relative flex mt-8 space-x-2">
+              <button
+                type="button"
+                class="btn btn-tertiary btn-md btn-icon-right lang-btn"
+                aria-expanded="false"
+              >
+                <span>FR</span>
+                <svg class="icon transform transition-all duration-300 icon-chevron-bottom" aria-hidden="true">
+    <use xlink:href="#chevron-bottom"></use>
+  </svg>
+              </button>
+              <ul
+                aria-label="Menu de langues"
+                class="absolute flex language-anim-out space-x-2 lang-menu"
+              >
+                                  <li class="invisible">
+                                          <button disabled class="btn btn-tertiary btn-md">
+                        <span>EN</span>
+                      </button>
+                                      </li>
+                                  <li class="invisible">
+                                          <button disabled class="btn btn-tertiary btn-md">
+                        <span>IT</span>
+                      </button>
+                                      </li>
+                                  <li class="invisible">
+                                          <button disabled class="btn btn-tertiary btn-md">
+                        <span>DE</span>
+                      </button>
+                                      </li>
+                              </ul>
+              <button
+                type="button"
+                class="btn btn-tertiary btn-md absolute hidden dark-mode-btn dark"
+                data-domain="cinematheque.ch"
+              >
+                <svg class="icon icon-sun" aria-hidden="true">
+    <use xlink:href="#sun"></use>
+  </svg>
+              </button>
+              <button
+                type="button"
+                class="btn btn-tertiary btn-md absolute dark-mode-btn"
+                data-domain="cinematheque.ch"
+              >
+                <svg class="icon icon-moon" aria-hidden="true">
+    <use xlink:href="#moon"></use>
+  </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+  id="mobileBigMenu"
+  data-open-selector=".btn-big-menu-mobile"
+  data-close-selector=".overlay-close-nested-menu"
+  class="fixed top-0 bottom-0 left-0 z-50 w-screen cin-min-h-screen overlay"
+  aria-modal="true"
+  aria-hidden="true"
+>
+                      <button
+            type="button"
+            class="btn btn-white btn-lg btn-icon-lg overlay-close-nested-menu absolute top-2 md:top-6 right-3 md:right-6 z-10"
+            aria-expanded="false"
+            aria-controls="mobileBigMenu"
+          >
+            <svg class="icon icon-cross-small" aria-hidden="true">
+    <use xlink:href="#cross-small"></use>
+  </svg>
+          </button>
+          <div class="flex flex-col h-full dark:bg-gray-890">
+            <div class="flex items-center justify-start px-3 bg-gray-100 h-14 dark:bg-gray-890">
+              <button
+                type="button"
+                class="text-gray-900 btn btn-icon-sm space-x-3 back-main-menu dark:text-white"
+              >
+                <svg class="icon icon-chevron-left" aria-hidden="true">
+    <use xlink:href="#chevron-left"></use>
+  </svg>
+                <span class="h-300">Menu principal</span>
+              </button>
+            </div>
+            <div class="flex-grow px-3 bg-white dark:bg-gray-890">
+                                                              <nav
+                    class="hidden py-8"
+                    aria-label="cinematheque.header.a11y.mobile.sub_menu.label"
+                    aria-hidden="true"
+                    data-link-slug="la-cinematheque"
+                  >
+                    <div class="space-y-6">
+                      <p class="h-600 dark:text-white">La Cinémathèque</p>
+                      <ul
+                        class="relative cin-border-t"
+                        aria-label="Menu principal"
+                      >
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/la-cinematheque/la-cinematheque-suisse" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>La Cinémathèque suisse</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/la-cinematheque/institution" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Institution</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/la-cinematheque/histoire" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Histoire</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/la-cinematheque/partenariats" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Partenariats</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/la-cinematheque/les-amies-de-la-cinematheque-suisse" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Les Ami·e·s de la Cinémathèque suisse</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/la-cinematheque/centres-de-recherche-et-darchivage" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Centres de recherche et d’archivage</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/la-cinematheque/salles-de-projection" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Salles de projection</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/la-cinematheque/le-capitole-la-maison-du-cinema" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Le Capitole, la Maison du cinéma</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                              </ul>
+                    </div>
+                  </nav>
+                                                                                              <nav
+                    class="hidden py-8"
+                    aria-label="cinematheque.header.a11y.mobile.sub_menu.label"
+                    aria-hidden="true"
+                    data-link-slug="collections"
+                  >
+                    <div class="space-y-6">
+                      <p class="h-600 dark:text-white">Collections</p>
+                      <ul
+                        class="relative cin-border-t"
+                        aria-label="Menu principal"
+                      >
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/collections" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Toutes les collections</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/collections/valorisation-en-ligne" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Valorisation en ligne</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/collections/tresors-des-collections" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Trésors des collections</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/collections/departement-film" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Département Film</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/collections/departement-non-film" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Département Non-Film</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/collections/recherches" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Recherches</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                              </ul>
+                    </div>
+                  </nav>
+                                                                                              <nav
+                    class="hidden py-8"
+                    aria-label="cinematheque.header.a11y.mobile.sub_menu.label"
+                    aria-hidden="true"
+                    data-link-slug="infos-pratiques"
+                  >
+                    <div class="space-y-6">
+                      <p class="h-600 dark:text-white">Infos pratiques</p>
+                      <ul
+                        class="relative cin-border-t"
+                        aria-label="Menu principal"
+                      >
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/infos-pratiques/contact" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Contact</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/infos-pratiques/acces-et-horaires" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Accès et horaires</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/infos-pratiques/billetterie-et-abonnements" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Billetterie et abonnements</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/infos-pratiques/bulletin-imprime" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Bulletin imprimé</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/infos-pratiques/newsletter" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Newsletter</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/infos-pratiques/offres-demploi" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Offres d&#039;emploi</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                              </ul>
+                    </div>
+                  </nav>
+                                                                <nav
+                    class="hidden py-8"
+                    aria-label="cinematheque.header.a11y.mobile.sub_menu.label"
+                    aria-hidden="true"
+                    data-link-slug="services"
+                  >
+                    <div class="space-y-6">
+                      <p class="h-600 dark:text-white">Services</p>
+                      <ul
+                        class="relative cin-border-t"
+                        aria-label="Menu principal"
+                      >
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/services/films-en-diffusion" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Films en diffusion</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/services/boutique" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Boutique</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/services/mediation-culturelle" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Médiation culturelle</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/services/projections-scolaires" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Projections scolaires</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/services/consultation-et-visites" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Consultation et visites</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/services/location-de-salles" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Location de salles</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/services/dons-et-depots" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Dons et dépôts</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/services/commande-dimages" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Commande d&#039;images</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/services/demandes-en-ligne" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Demandes en ligne</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                                                            <li class="h-300 cin-border-b py-2.5 nav-link">
+                            <a href="https://www.cinematheque.ch/services/presse" class="inline-flex items-center justify-between w-full ml-px">
+                              <span>Presse</span>
+                              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                            </a>
+                          </li>
+                                              </ul>
+                    </div>
+                  </nav>
+                                          </div>
+          </div>
+        </div>
+    </div>
+</header>
+
+<div
+  id="bigMenu"
+  data-open-selector=".link-big-menu"
+  data-close-selector=".overlay-close"
+  class="fixed top-0 bottom-0 left-0 z-50 w-screen cin-min-h-screen overlay"
+  aria-modal="true"
+  aria-hidden="true"
+>
+          <div class="container hidden md:block">
+      <div class="h-screen container-grid">
+        <div class="relative flex items-end h-full bg-white dark:bg-gray-890 col-start-4 lg:col-start-4 col-span-6 lg:col-span-4 big-menu-listing">
+          <button
+            type="button"
+            class="btn btn-secondary btn-lg btn-icon-sm overlay-close absolute top-6 right-6 z-10"
+            aria-expanded="false"
+            aria-controls="bigMenu"
+          >
+            <svg class="icon icon-cross-big" aria-hidden="true">
+    <use xlink:href="#cross-big"></use>
+  </svg>
+          </button>
+                                    <ul
+                class="hidden w-full mb-6 mr-6 cin-border-t"
+                aria-hidden="true"
+                data-link-slug="la-cinematheque"
+              >
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/la-cinematheque/la-cinematheque-suisse" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        La Cinémathèque suisse
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/la-cinematheque/institution" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Institution
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/la-cinematheque/histoire" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Histoire
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/la-cinematheque/partenariats" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Partenariats
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/la-cinematheque/les-amies-de-la-cinematheque-suisse" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Les Ami·e·s de la Cinémathèque suisse
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/la-cinematheque/centres-de-recherche-et-darchivage" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Centres de recherche et d’archivage
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/la-cinematheque/salles-de-projection" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Salles de projection
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/la-cinematheque/le-capitole-la-maison-du-cinema" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Le Capitole, la Maison du cinéma
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                              </ul>
+                                                                      <ul
+                class="hidden w-full mb-6 mr-6 cin-border-t"
+                aria-hidden="true"
+                data-link-slug="collections"
+              >
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/collections" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Toutes les collections
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/collections/valorisation-en-ligne" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Valorisation en ligne
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/collections/tresors-des-collections" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Trésors des collections
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/collections/departement-film" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Département Film
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/collections/departement-non-film" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Département Non-Film
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/collections/recherches" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Recherches
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                              </ul>
+                                                                      <ul
+                class="hidden w-full mb-6 mr-6 cin-border-t"
+                aria-hidden="true"
+                data-link-slug="infos-pratiques"
+              >
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/infos-pratiques/contact" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Contact
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/infos-pratiques/acces-et-horaires" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Accès et horaires
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/infos-pratiques/billetterie-et-abonnements" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Billetterie et abonnements
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/infos-pratiques/bulletin-imprime" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Bulletin imprimé
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/infos-pratiques/newsletter" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Newsletter
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/infos-pratiques/offres-demploi" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Offres d&#039;emploi
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                              </ul>
+                                                <ul
+                class="hidden w-full mb-6 mr-6 cin-border-t"
+                aria-hidden="true"
+                data-link-slug="services"
+              >
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/services/films-en-diffusion" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Films en diffusion
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/services/boutique" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Boutique
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/services/mediation-culturelle" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Médiation culturelle
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/services/projections-scolaires" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Projections scolaires
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/services/consultation-et-visites" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Consultation et visites
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/services/location-de-salles" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Location de salles
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/services/dons-et-depots" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Dons et dépôts
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/services/commande-dimages" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Commande d&#039;images
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/services/demandes-en-ligne" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Demandes en ligne
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                                                    <li
+                    class="cin-border-b py-2.5 h-300 nav-link"
+                  >
+                    <a href="https://www.cinematheque.ch/services/presse" class="inline-flex items-center justify-between w-full ml-px">
+                      <span>
+                        Presse
+                      </span>
+                      <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+                    </a>
+                  </li>
+                              </ul>
+                              </div>
+        <div
+          aria-hidden="true"
+          id="outsideBigMenu"
+          class="h-full col-start-10 lg:col-start-8 col-span-6 lg:col-span-8 cin-w-full"
+        ></div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <main class="flex-grow">
+        <div
+    class="container"
+    data-immerser-layer
+    data-immerser-layer-config='{"header": "no-class"}'
+  >
+    <div class="container-grid">
+      <div class="mb-4 container-6/12">
+  <ul
+    class="flex items-center list-none mt-4.5 md:mt-10 md:space-x-1 cin-breadcrumb"
+    aria-label="Breadcrumb"
+  >
+                  <li class="md:space-x-1 p-200 text-gray-900 dark:text-white">
+            <span class="flex items-center md:items-baseline md:space-x-1">
+              <a href="https://www.cinematheque.ch" class="ml-1 hover:underline underline-offset-3 decoration-1 md:ml-0">
+                Accueil
+              </a>
+              <span class="order-first md:order-none">
+                <svg class="icon md:rotate-0 rotate-180 transform icon-chevron-right" aria-hidden="true">
+  <use xlink:href="#chevron-right"></use>
+</svg>
+              </span>
+            </span>
+        </li>
+                        <li class="md:space-x-1 p-200 text-gray-700 dark:text-gray-600 md:inline-block hidden">
+          <span aria-current="page">Projections</span>
+        </li>
+            </ul>
+</div>
+      <div class="mb-4 container-6/12 md:mb-6">
+        <h1 class="h-600 dark:text-white">Projections</h1>
+      </div>
+
+      <div class="container-9/12">
+        <section class="pb-6">
+          <h2 class="sr-only">Cycles</h2>
+
+                      <div class="flex flex-wrap gap-2 flex-col items-start md:flex-row max-w-full">
+                              <a
+                  href="/?category=2357-rtrospective-michel-gondry"
+                  class="btn btn-md overflow-hidden max-w-full text-white btn-colored"
+                  style="background-color:#a1287c"
+                >
+                  <span class="truncate">Rétrospective Michel Gondry</span>
+                </a>
+                              <a
+                  href="/?category=2377-rtrospective-jodie-foster"
+                  class="btn btn-md overflow-hidden max-w-full text-white btn-colored"
+                  style="background-color:#338888"
+                >
+                  <span class="truncate">Rétrospective Jodie Foster</span>
+                </a>
+                              <a
+                  href="/?category=2376-rtrospective-richard-linklater"
+                  class="btn btn-md overflow-hidden max-w-full text-white btn-colored"
+                  style="background-color:#774422"
+                >
+                  <span class="truncate">Rétrospective Richard Linklater</span>
+                </a>
+                              <a
+                  href="/?category=2375-rtrospective-wim-wenders-1re-partie"
+                  class="btn btn-md overflow-hidden max-w-full text-gray-900 btn-colored"
+                  style="background-color:#ee7766"
+                >
+                  <span class="truncate">Rétrospective Wim Wenders (1ère partie)</span>
+                </a>
+                              <a
+                  href="/?category=2408-marathon-travelling-avec-la-rts-the-lord-of-the-rings"
+                  class="btn btn-md overflow-hidden max-w-full text-gray-900 btn-colored"
+                  style="background-color:#ffbb22"
+                >
+                  <span class="truncate">Marathon Travelling avec la RTS: &quot;The Lord of the Rings&quot;</span>
+                </a>
+              
+              <button
+                type="button"
+                class="btn btn-secondary btn-md btn-icon-right block md:inline-block"
+                aria-expanded="false"
+                aria-controls="collapse-movies-cycles"
+                data-collapse-target="collapse-movies-cycles"
+              >
+                <span class="expanded:hidden">
+                  Voir tous les cycles
+                </span>
+                <span class="collapsed:hidden">Fermer</span>
+                <svg class="icon expanded:hidden icon-chevron-bottom" aria-hidden="true">
+  <use xlink:href="#chevron-bottom"></use>
+</svg>
+                <svg class="icon collapsed:hidden icon-chevron-top" aria-hidden="true">
+  <use xlink:href="#chevron-top"></use>
+</svg>
+              </button>
+            </div>
+
+            <div id="collapse-movies-cycles" class="collapse">
+              <div class="mt-6 space-y-6">
+                                  <div>
+                    <h3 class="h-200 mb-2.5 dark:text-white">
+                      Aussi à l'affiche
+                    </h3>
+                    <div class="flex flex-wrap gap-2 flex-col items-start md:flex-row">
+                                                                                                <a
+                            href="/?category=2380-soire-thtre-de-vidy-berger-tanner"
+                            class="btn btn-md overflow-hidden max-w-full text-white btn-primary-reverse"
+                          >
+                            <span class="truncate">Soirée Théâtre de Vidy : Berger / Tanner</span>
+                          </a>
+                                                                                                                        <a
+                            href="/?category=2364-les-films-de-diplme-de-l-ecal"
+                            class="btn btn-md overflow-hidden max-w-full text-white btn-primary-reverse"
+                          >
+                            <span class="truncate">Les films de diplôme de l’ECAL</span>
+                          </a>
+                                                                  </div>
+                  </div>
+                
+                <div>
+                  <h3 class="h-200 mb-2.5 dark:text-white">
+                    Rendez-vous réguliers
+                  </h3>
+                  <div class="flex flex-wrap gap-2 flex-col items-start md:flex-row">
+                                          <a href="/?category=2372-les-films-travelling-avec-la-rts"
+                        class="btn btn-md overflow-hidden max-w-full text-white btn-secondary-reverse bg-gray-475 hover:bg-gray-450"
+                      >
+                        <span class="truncate">Les films Travelling avec la RTS</span>
+                      </a>
+                                          <a href="/?category=2371-le-samedi-de-la-peur-les-griffes-de-la-nuit"
+                        class="btn btn-md overflow-hidden max-w-full text-white btn-secondary-reverse bg-gray-475 hover:bg-gray-450"
+                      >
+                        <span class="truncate">Le samedi de la peur : &quot;Les Griffes de la nuit&quot;</span>
+                      </a>
+                                          <a href="/?category=2370-cin-familles"
+                        class="btn btn-md overflow-hidden max-w-full text-white btn-secondary-reverse bg-gray-475 hover:bg-gray-450"
+                      >
+                        <span class="truncate">Ciné-familles</span>
+                      </a>
+                                          <a href="/?category=2369-le-passculture-fait-son-cinma"
+                        class="btn btn-md overflow-hidden max-w-full text-white btn-secondary-reverse bg-gray-475 hover:bg-gray-450"
+                      >
+                        <span class="truncate">Le Passculture fait son cinéma</span>
+                      </a>
+                                          <a href="/?category=2367-trsors-des-archives"
+                        class="btn btn-md overflow-hidden max-w-full text-white btn-secondary-reverse bg-gray-475 hover:bg-gray-450"
+                      >
+                        <span class="truncate">Trésors des archives</span>
+                      </a>
+                                          <a href="/?category=2366-introduction--l-histoire-du-cinma"
+                        class="btn btn-md overflow-hidden max-w-full text-white btn-secondary-reverse bg-gray-475 hover:bg-gray-450"
+                      >
+                        <span class="truncate">Introduction à l’histoire du cinéma</span>
+                      </a>
+                                      </div>
+                </div>
+              </div>
+            </div>
+                            </section>
+      </div>
+
+              <div class="container-9/12">
+          <div class="py-4 md:grid md:grid-cols-9 md:gap-x-4 cin-border-t">
+            <div class="md:col-span-6">
+              <form method="GET" action="https://live.cinematheque.ch" class="flex items-center space-x-2">
+                <div class="relative form-input-text w-full">
+                  <label>
+                    <span class="sr-only">
+                      Rechercher
+                    </span>
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-5 text-base pointer-events-none">
+                        <svg class="icon search-input-icon icon-top-0 dark:text-gray-500 icon-search-16" aria-hidden="true">
+  <use xlink:href="#search-16"></use>
+</svg>
+                    </div>
+                    <input
+                      type="text"
+                      name="search"
+                      id="searchInput"
+                      placeholder="Rechercher..."
+                      class="search-input form-input-dark-bg"
+                      value=""
+                    />
+                                      </label>
+                </div>
+                <button type="submit" class="sr-only btn btn-primary btn-lg">Rechercher</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      
+              <div class="container-9/12">
+          <div class="py-4 cin-border-t">
+            <div class="grid grid-cols-4 lg:grid-cols-9">
+              <div class="justify-between hidden lg:flex lg:col-span-9">
+                <ul class="flex gap-2">
+                  <li class="inline-block">
+                    <a
+                      href="https://live.cinematheque.ch/?interval=events"
+                      class="btn btn-primary-reverse btn-md"
+                    >
+                      Evénements
+                    </a>
+                  </li>
+                  <li class="inline-block">
+                    <a
+                      href="https://live.cinematheque.ch/?interval=all"
+                      class="btn btn-secondary btn-md"
+                    >
+                      Tous les films
+                    </a>
+                  </li>
+                  <li class="inline-block">
+                    <a
+                      href="https://live.cinematheque.ch/?interval=today"
+                      class="btn btn-secondary btn-md"
+                    >
+                      Aujourd'hui
+                    </a>
+                  </li>
+                  <li class="inline-block">
+                    <a
+                      href="https://live.cinematheque.ch/?interval=week"
+                      class="btn btn-secondary btn-md"
+                    >
+                      7 prochains jours
+                    </a>
+                  </li>
+
+                  <li>
+                    <div class="datepicker-container">
+                      <div
+                        class="relative inline-block datepicker"
+                        data-redirect-url="https://live.cinematheque.ch/?interval=events"
+                        data-events-dates="[&quot;2026-11-08&quot;,&quot;2026-10-18&quot;,&quot;2026-10-22&quot;,&quot;2026-10-27&quot;,&quot;2026-10-27&quot;,&quot;2026-10-28&quot;,&quot;2026-10-31&quot;,&quot;2026-10-31&quot;]"
+                        data-locale="fr"
+                        data-clear-label="Réinitialiser"
+                      >
+                        <input
+                          class="absolute invisible w-full h-9"
+                          type="text"
+                          data-input
+                        />
+                        <button
+                          type="button"
+                          class="btn btn-md btn-icon-left btn-secondary"
+                          data-toggle
+                        >
+                          <svg class="icon icon-calendar" aria-hidden="true">
+  <use xlink:href="#calendar"></use>
+</svg>
+                          <span data-date-placeholder>Date</span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="flex gap-2">
+                  <span
+  id="informationRooms"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Les projections ont lieu au cin\u00e9ma Capitole, situ\u00e9 \u00e0 l\u2019avenue du Th\u00e9\u00e2tre 6 \u00e0 Lausanne.&quot;}"
+  class="init-tippy "
+>
+  <svg
+                      width="1.25rem"
+                      height="1.25rem"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11 10.9794C11 10.4271 11.4477 9.97937 12 9.97937C12.5523 9.97937 13 10.4271 13 10.9794V16.9794C13 17.5317 12.5523 17.9794 12 17.9794C11.4477 17.9794 11 17.5317 11 16.9794V10.9794Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="M12 6.05115C11.4477 6.05115 11 6.49886 11 7.05115C11 7.60343 11.4477 8.05115 12 8.05115C12.5523 8.05115 13 7.60343 13 7.05115C13 6.49886 12.5523 6.05115 12 6.05115Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+</span>
+                                    <div class="relative inline-block dropdown">
+  <button
+    class="btn btn-md btn-icon-right btn-secondary"
+    data-dropdown-target="roomsFilter"
+    aria-expanded="false"
+  >
+    <span>Salles</span>
+    <svg class="icon icon-chevron-bottom" aria-hidden="true">
+  <use xlink:href="#chevron-bottom"></use>
+</svg>
+  </button>
+
+  <div
+    id="roomsFilter"
+    class="dropdown-menu border border-gray-200 absolute z-20 px-4 pt-4 pb-3 bg-white top-10 rounded-20 dark:bg-gray-890 dark:border-gray-800 left-0"
+  >
+    <form action="https://live.cinematheque.ch/?interval=events" method="GET" data-filter-types='["rooms"]' class="filter-form">
+                      <div class="flex flex-col space-y-3">
+                                                  <label class="checkbox-input checkbox-md">
+                            <input
+                              type="checkbox"
+                              name="rooms[0]"
+                              value="CAP 1"
+                              
+                            />
+                            <span>CAP 1 – Capitole, Salle Freddy Buache</span>
+                          </label>
+                                                  <label class="checkbox-input checkbox-md">
+                            <input
+                              type="checkbox"
+                              name="rooms[1]"
+                              value="CAP 2"
+                              
+                            />
+                            <span>CAP 2 – Capitole, Salle Lucienne Schnegg</span>
+                          </label>
+                                                  <label class="checkbox-input checkbox-md">
+                            <input
+                              type="checkbox"
+                              name="rooms[2]"
+                              value="CDP"
+                              
+                            />
+                            <span>Château de Prangins</span>
+                          </label>
+                                                  <label class="checkbox-input checkbox-md">
+                            <input
+                              type="checkbox"
+                              name="rooms[3]"
+                              value="ECAL"
+                              
+                            />
+                            <span>ECAL</span>
+                          </label>
+                                              </div>
+                      <div class="flex items-center justify-between mt-4">
+                        <a
+                          class="p-200 dark:text-white"
+                          href="https://live.cinematheque.ch/?interval=events"
+                        >
+                          Réinitialiser
+                        </a>
+                        <button type="submit" class="btn btn-primary btn-md">Appliquer</button>
+                      </div>
+                    </form>
+  </div>
+</div>
+
+                                    <div class="relative inline-block dropdown">
+  <button
+    class="btn btn-md btn-icon-right btn-secondary"
+    data-dropdown-target="formatsFilter"
+    aria-expanded="false"
+  >
+    <span>Supports</span>
+    <svg class="icon icon-chevron-bottom" aria-hidden="true">
+  <use xlink:href="#chevron-bottom"></use>
+</svg>
+  </button>
+
+  <div
+    id="formatsFilter"
+    class="dropdown-menu border border-gray-200 absolute z-20 px-4 pt-4 pb-3 bg-white top-10 rounded-20 dark:bg-gray-890 dark:border-gray-800 right-0"
+  >
+    <form action="https://live.cinematheque.ch/?interval=events" method="GET" data-filter-types='["formats"]' class="filter-form">
+                      <div class="flex flex-col space-y-3">
+                                                  <label class="checkbox-input checkbox-md">
+                            <input
+                              type="checkbox"
+                              name="formats[0]"
+                              value="35mm"
+                              
+                            />
+                            <span>35mm</span>
+                          </label>
+                                                  <label class="checkbox-input checkbox-md">
+                            <input
+                              type="checkbox"
+                              name="formats[1]"
+                              value="DC"
+                              
+                            />
+                            <span>DC (Digital Cinema)</span>
+                          </label>
+                                              </div>
+                      <div class="flex items-center justify-between mt-4">
+                        <a
+                          class="p-200 dark:text-white"
+                          href="https://live.cinematheque.ch/?interval=events"
+                        >
+                          Réinitialiser
+                        </a>
+                        <button type="submit" class="btn btn-primary btn-md">Appliquer</button>
+                      </div>
+                    </form>
+  </div>
+</div>
+
+                  <div class="relative inline-block dropdown">
+  <button
+    class="btn btn-md btn-icon-right btn-secondary"
+    data-dropdown-target="legalAgesFilter"
+    aria-expanded="false"
+  >
+    <span>Age légal</span>
+    <svg class="icon icon-chevron-bottom" aria-hidden="true">
+  <use xlink:href="#chevron-bottom"></use>
+</svg>
+  </button>
+
+  <div
+    id="legalAgesFilter"
+    class="dropdown-menu border border-gray-200 absolute z-20 px-4 pt-4 pb-3 bg-white top-10 rounded-20 dark:bg-gray-890 dark:border-gray-800 right-0"
+  >
+    <form action="https://live.cinematheque.ch/?interval=events" method="GET" data-filter-types='["legalAge"]' class="filter-form">
+                      <div class="flex space-x-2">
+                                                  <label class="age-radio ">
+                            <input
+                              type="radio"
+                              name="legalAge"
+                              value="F"
+                              
+                              class="hidden"
+                            />
+                            <span class="age-radio-btn inline-flex items-center justify-center w-8 h-8 font-bold text-gray-900 bg-gray-200 rounded-full cursor-pointer transition-colors hover:bg-gray-500 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white">
+                              F
+                            </span>
+                          </label>
+                                                  <label class="age-radio ">
+                            <input
+                              type="radio"
+                              name="legalAge"
+                              value="7"
+                              
+                              class="hidden"
+                            />
+                            <span class="age-radio-btn inline-flex items-center justify-center w-8 h-8 font-bold text-gray-900 bg-gray-200 rounded-full cursor-pointer transition-colors hover:bg-gray-500 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white">
+                              7
+                            </span>
+                          </label>
+                                                  <label class="age-radio ">
+                            <input
+                              type="radio"
+                              name="legalAge"
+                              value="12"
+                              
+                              class="hidden"
+                            />
+                            <span class="age-radio-btn inline-flex items-center justify-center w-8 h-8 font-bold text-gray-900 bg-gray-200 rounded-full cursor-pointer transition-colors hover:bg-gray-500 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white">
+                              12
+                            </span>
+                          </label>
+                                                  <label class="age-radio ">
+                            <input
+                              type="radio"
+                              name="legalAge"
+                              value="14"
+                              
+                              class="hidden"
+                            />
+                            <span class="age-radio-btn inline-flex items-center justify-center w-8 h-8 font-bold text-gray-900 bg-gray-200 rounded-full cursor-pointer transition-colors hover:bg-gray-500 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white">
+                              14
+                            </span>
+                          </label>
+                                                  <label class="age-radio ">
+                            <input
+                              type="radio"
+                              name="legalAge"
+                              value="16"
+                              
+                              class="hidden"
+                            />
+                            <span class="age-radio-btn inline-flex items-center justify-center w-8 h-8 font-bold text-gray-900 bg-gray-200 rounded-full cursor-pointer transition-colors hover:bg-gray-500 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white">
+                              16
+                            </span>
+                          </label>
+                                                  <label class="age-radio ">
+                            <input
+                              type="radio"
+                              name="legalAge"
+                              value="18"
+                              
+                              class="hidden"
+                            />
+                            <span class="age-radio-btn inline-flex items-center justify-center w-8 h-8 font-bold text-gray-900 bg-gray-200 rounded-full cursor-pointer transition-colors hover:bg-gray-500 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white">
+                              18
+                            </span>
+                          </label>
+                                              </div>
+                      <div class="flex items-center justify-between mt-4">
+                        <a
+                          class="p-200 dark:text-white"
+                          href="https://live.cinematheque.ch/?interval=events"
+                        >
+                          Réinitialiser
+                        </a>
+                        <button type="submit" class="btn btn-primary btn-md">Appliquer</button>
+                      </div>
+                    </form>
+  </div>
+</div>
+                </div>
+              </div>
+
+              <div class="relative flex justify-between col-span-4 lg:hidden">
+                <button
+                  class="btn btn-secondary btn-md btn-icon-right btn-timeranges-mobile"
+                  aria-expanded="false"
+                  aria-controls="timerangesMenu"
+                >
+                                      <p>Evénements</p>
+                                    <svg class="icon icon-chevron-bottom" aria-hidden="true">
+  <use xlink:href="#chevron-bottom"></use>
+</svg>
+                </button>
+
+                <div
+  id="timerangesMenu"
+  data-open-selector=".btn-timeranges-mobile"
+  data-close-selector=".overlay-close"
+  class="fixed top-0 bottom-0 left-0 z-50 w-screen cin-min-h-screen overlay"
+  aria-modal="true"
+  aria-hidden="true"
+>
+  <button
+                    class="btn btn-secondary btn-lg btn-icon-lg overlay-close absolute top-2 md:top-6 right-3 md:right-6 z-10"
+                    aria-expanded="false"
+                    aria-controls="timerangesMenu"
+                  >
+                    <svg class="icon icon-cross-small" aria-hidden="true">
+  <use xlink:href="#cross-small"></use>
+</svg>
+                  </button>
+
+                  <div class="flex flex-col h-full dark:bg-gray-890">
+                    <div class="flex-grow bg-white dark:bg-gray-890">
+                      <div class="px-3 py-4 mt-14">
+                        <p class="pb-1 mb-4 h-300 cin-border-b dark:text-white">
+                          Quand
+                        </p>
+                        <ul class="flex flex-col gap-y-2">
+                          <li class="inline-block">
+                            <a
+                              href="https://live.cinematheque.ch/?interval=events"
+                              class="btn btn-primary-reverse btn-md"
+                            >
+                              Evénements
+                            </a>
+                          </li>
+                          <li class="inline-block">
+                            <a href="https://live.cinematheque.ch/?interval=all" class="btn btn-secondary btn-md">
+                              Tous les films
+                            </a>
+                          </li>
+                          <li class="inline-block">
+                            <a href="https://live.cinematheque.ch/?interval=today" class="btn btn-secondary btn-md">
+                              Aujourd'hui
+                            </a>
+                          </li>
+                          <li class="inline-block">
+                            <a href="https://live.cinematheque.ch/?interval=week" class="btn btn-secondary btn-md">
+                              7 prochains jours
+                            </a>
+                          </li>
+
+                          <li>
+                            <div class="datepicker-container">
+                              <div
+                                class="relative inline-block datepicker"
+                                data-redirect-url="https://live.cinematheque.ch/?interval=events"
+                                data-events-dates="[&quot;2026-11-08&quot;,&quot;2026-10-18&quot;,&quot;2026-10-22&quot;,&quot;2026-10-27&quot;,&quot;2026-10-27&quot;,&quot;2026-10-28&quot;,&quot;2026-10-31&quot;,&quot;2026-10-31&quot;]"
+                                data-locale="fr"
+                                data-clear-label="Réinitialiser"
+                              >
+                                <input
+                                  class="absolute invisible w-full h-9"
+                                  type="text"
+                                  data-input
+                                />
+                                <button
+                                  type="button"
+                                  class="btn btn-md btn-icon-left btn-secondary"
+                                  data-toggle
+                                >
+                                  <svg class="icon icon-calendar" aria-hidden="true">
+  <use xlink:href="#calendar"></use>
+</svg>
+                                  <span data-date-placeholder>Date</span>
+                                </button>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+</div>
+
+                <button
+                  class="btn btn-secondary btn-md btn-icon-left btn-filters-mobile"
+                  aria-expanded="false"
+                  aria-controls="filtersMenu"
+                >
+                  <svg class="icon icon-filters" aria-hidden="true">
+  <use xlink:href="#filters"></use>
+</svg>
+                  <span>Filtres</span>
+                </button>
+
+                <div
+  id="filtersMenu"
+  data-open-selector=".btn-filters-mobile"
+  data-close-selector=".overlay-close"
+  class="fixed top-0 bottom-0 left-0 z-50 w-screen cin-min-h-screen overlay"
+  aria-modal="true"
+  aria-hidden="true"
+>
+  <button
+                    class="btn btn-secondary btn-lg btn-icon-lg overlay-close absolute top-2 md:top-6 right-3 md:right-6 z-10"
+                    aria-expanded="false"
+                    aria-controls="filtersMenu"
+                  >
+                    <svg class="icon icon-cross-small" aria-hidden="true">
+  <use xlink:href="#cross-small"></use>
+</svg>
+                  </button>
+
+                  <div class="flex flex-col h-full dark:bg-gray-890">
+                    <div class="flex-grow bg-white dark:bg-gray-890">
+                      <form
+                        action="https://live.cinematheque.ch/?interval=events"
+                        method="GET"
+                        data-filter-types='["rooms", "formats", "legalAge"]'
+                        class="flex flex-col h-full filter-form"
+                      >
+                        <div class="flex flex-col h-full p-4 mt-14">
+                          <div>
+                            <p class="pb-1 mb-4 h-300 cin-border-b dark:text-white">
+                              Salles
+                            </p>
+                            <div class="flex flex-col space-y-3">
+                                                              <label class="checkbox-input checkbox-md">
+                                  <input
+                                    type="checkbox"
+                                    name="rooms[0]"
+                                    value="CAP 1"
+                                    
+                                  />
+                                  <span>CAP 1 – Capitole, Salle Freddy Buache</span>
+                                </label>
+                                                              <label class="checkbox-input checkbox-md">
+                                  <input
+                                    type="checkbox"
+                                    name="rooms[1]"
+                                    value="CAP 2"
+                                    
+                                  />
+                                  <span>CAP 2 – Capitole, Salle Lucienne Schnegg</span>
+                                </label>
+                                                              <label class="checkbox-input checkbox-md">
+                                  <input
+                                    type="checkbox"
+                                    name="rooms[2]"
+                                    value="CDP"
+                                    
+                                  />
+                                  <span>Château de Prangins</span>
+                                </label>
+                                                              <label class="checkbox-input checkbox-md">
+                                  <input
+                                    type="checkbox"
+                                    name="rooms[3]"
+                                    value="ECAL"
+                                    
+                                  />
+                                  <span>ECAL</span>
+                                </label>
+                                                          </div>
+                          </div>
+
+                          <div class="mt-8">
+                            <p class="pb-1 mb-4 h-300 cin-border-b dark:text-white">
+                              Supports
+                            </p>
+                            <div class="flex flex-col space-y-3">
+                                                              <label class="checkbox-input checkbox-md">
+                                  <input
+                                    type="checkbox"
+                                    name="formats[0]"
+                                    value="35mm"
+                                    
+                                  />
+                                  <span>35mm</span>
+                                </label>
+                                                              <label class="checkbox-input checkbox-md">
+                                  <input
+                                    type="checkbox"
+                                    name="formats[1]"
+                                    value="DC"
+                                    
+                                  />
+                                  <span>DC (Digital Cinema)</span>
+                                </label>
+                                                          </div>
+                          </div>
+
+                          <div class="mt-8">
+                            <p class="pb-1 mb-4 h-300 cin-border-b dark:text-white">
+                              Age légal
+                            </p>
+                            <div class="flex space-x-2">
+                                                              <label class="age-radio ">
+                                  <input
+                                    type="radio"
+                                    name="legalAge"
+                                    value="F"
+                                    
+                                    class="hidden"
+                                  />
+                                  <span class="age-radio-btn inline-flex items-center justify-center w-8 h-8 font-bold text-gray-900 bg-gray-200 rounded-full cursor-pointer transition-colors hover:bg-gray-500 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white">
+                                    F
+                                  </span>
+                                </label>
+                                                              <label class="age-radio ">
+                                  <input
+                                    type="radio"
+                                    name="legalAge"
+                                    value="7"
+                                    
+                                    class="hidden"
+                                  />
+                                  <span class="age-radio-btn inline-flex items-center justify-center w-8 h-8 font-bold text-gray-900 bg-gray-200 rounded-full cursor-pointer transition-colors hover:bg-gray-500 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white">
+                                    7
+                                  </span>
+                                </label>
+                                                              <label class="age-radio ">
+                                  <input
+                                    type="radio"
+                                    name="legalAge"
+                                    value="12"
+                                    
+                                    class="hidden"
+                                  />
+                                  <span class="age-radio-btn inline-flex items-center justify-center w-8 h-8 font-bold text-gray-900 bg-gray-200 rounded-full cursor-pointer transition-colors hover:bg-gray-500 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white">
+                                    12
+                                  </span>
+                                </label>
+                                                              <label class="age-radio ">
+                                  <input
+                                    type="radio"
+                                    name="legalAge"
+                                    value="14"
+                                    
+                                    class="hidden"
+                                  />
+                                  <span class="age-radio-btn inline-flex items-center justify-center w-8 h-8 font-bold text-gray-900 bg-gray-200 rounded-full cursor-pointer transition-colors hover:bg-gray-500 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white">
+                                    14
+                                  </span>
+                                </label>
+                                                              <label class="age-radio ">
+                                  <input
+                                    type="radio"
+                                    name="legalAge"
+                                    value="16"
+                                    
+                                    class="hidden"
+                                  />
+                                  <span class="age-radio-btn inline-flex items-center justify-center w-8 h-8 font-bold text-gray-900 bg-gray-200 rounded-full cursor-pointer transition-colors hover:bg-gray-500 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white">
+                                    16
+                                  </span>
+                                </label>
+                                                              <label class="age-radio ">
+                                  <input
+                                    type="radio"
+                                    name="legalAge"
+                                    value="18"
+                                    
+                                    class="hidden"
+                                  />
+                                  <span class="age-radio-btn inline-flex items-center justify-center w-8 h-8 font-bold text-gray-900 bg-gray-200 rounded-full cursor-pointer transition-colors hover:bg-gray-500 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white">
+                                    18
+                                  </span>
+                                </label>
+                                                          </div>
+                          </div>
+
+                          <div class="flex items-center justify-between mt-auto">
+                            <button
+                              type="button"
+                              class="filter-reset age-reset p-200 dark:text-white"
+                            >
+                              Réinitialiser
+                            </button>
+                            <button type="submit" class="btn btn-primary btn-md">Appliquer</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      <div class="container-9/12 cin-border-b mb-16 md:mb-20 pb-10 md:pb-16">
+                      <h2 class="sr-only">Listing des films</h2>
+                                        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-3 md:gap-x-4 mb-10 last:mb-0 md:mb-0 md:py-4 md:cin-border-t last:pb-0 dark:text-white">
+  <a href="/films/playtime" class="block group sm:col-span-2 md:col-span-1">
+    <div class="relative aspect-w-2.39 aspect-h-1">
+      
+      <img
+        src="/pictures/515788575d6047cef931c996f4c0259b.jpg"
+        srcset="/pictures/e15fffbd6e89711debba16693b00dc0d.jpg 1x, /pictures/515788575d6047cef931c996f4c0259b.jpg 2x"
+        alt="Playtime"
+        sizes="(min-width: 1599px) 376px, (min-width: 959px) calc(25vw - 3rem), calc(100vw - 1.5rem)"
+      />
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 group-hover:bg-opacity-10 group-hover:bg-gray-900 transition-all"
+      ></div>
+    </div>
+  </a>
+
+  <div>
+          <p
+        class="h-100 text-gray-475 dark:text-white"
+        style="color: "
+      >
+        Les films Travelling avec la RTS
+      </p>
+        <h3 class="italic h-300">
+      <a
+        href="/films/playtime"
+        class="decoration-underline underline-thickness-2 underline-offset-3 decoration-gray-900 dark:decoration-white"
+        style="text-decoration-color:"
+      >
+        Playtime
+      </a>
+    </h3>
+
+    <div class="p-200">
+      <div class="mt-2">
+                  <span>France</span>
+        
+                  · <span>1967</span>
+        
+                  · <span>119'</span>
+        
+                  · <span>v.o.fr</span>
+        
+                  ·               <span>35mm</span>
+                    
+                  <span class="relative inline-flex items-end -top-px px-1 align-middle border border-gray-900 h-4.5 h-50 rounded-2xl dark:border-white">
+            <span
+  id="noRequiredAge"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Famille&quot;}"
+  class="init-tippy "
+>
+  F
+</span>
+          </span>
+                <span class="relative inline-flex items-end -top-px px-1 align-middle border border-gray-900 h-4.5 h-50 rounded-2xl dark:border-white">
+          <span class="cursor-pointer">
+              <span
+  id="requiredAge"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Age l\u00e9gal \/ conseill\u00e9&quot;}"
+  class="init-tippy "
+>
+  6
+                              (10)
+</span>
+          </span>
+        </span>
+      </div>
+              <div>
+          <b>De</b> <span>Jacques Tati</span>
+        </div>
+                    <div>
+          <b>Avec</b> <span>Jacques Tati, Barbara Dennek, Jack Gauthier</span>
+        </div>
+          </div>
+  </div>
+
+      <div>
+      <h4 class="hidden mb-1 h-200 md:block">Séance(s)</h4>
+      <table class="w-full cin-border-b">
+                  <tr
+            class="group cin-border-t"
+          >
+            <td class="py-2">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24210"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                                      <span
+  id="screeningEvent138596"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Ev\u00e9nement&quot;}"
+  class="init-tippy "
+>
+  <span class="py-1 text-white bg-gray-900 dark:text-gray-900 dark:bg-white px-0.75">
+                                                  <span class="inline-block">Di</span>
+                          <span>18 octobre</span>
+                                              </span>
+</span>
+                                  </a>
+                                                      </td>
+            <td class="py-1">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24210"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                  14:30
+                </a>
+                                                      </td>
+            <td class="py-1">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24210"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                  <span
+  id="broadcastLocation138596"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;CAP 1 \u2013 Capitole, Salle Freddy Buache&quot;}"
+  class="init-tippy "
+>
+  CAP 1
+</span>
+                </a>
+                                                      </td>
+          </tr>
+              </table>
+    </div>
+  </div>
+                                        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-3 md:gap-x-4 mb-10 last:mb-0 md:mb-0 md:py-4 md:cin-border-t last:pb-0 dark:text-white">
+  <a href="/films/le-milieu-du-monde" class="block group sm:col-span-2 md:col-span-1">
+    <div class="relative aspect-w-2.39 aspect-h-1">
+      
+      <img
+        src="/pictures/edd9173ec9e8d9029a191705b7cee152.jpg"
+        srcset="/pictures/bfac759195b4799bf1a3f96900cc05a8.jpg 1x, /pictures/edd9173ec9e8d9029a191705b7cee152.jpg 2x"
+        alt="Le Milieu du monde"
+        sizes="(min-width: 1599px) 376px, (min-width: 959px) calc(25vw - 3rem), calc(100vw - 1.5rem)"
+      />
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 group-hover:bg-opacity-10 group-hover:bg-gray-900 transition-all"
+      ></div>
+    </div>
+  </a>
+
+  <div>
+          <p
+        class="h-100 text-gray-900 dark:text-white"
+        style="color: "
+      >
+        Soirée Théâtre de Vidy : Berger / Tanner
+      </p>
+        <h3 class="italic h-300">
+      <a
+        href="/films/le-milieu-du-monde"
+        class="decoration-underline underline-thickness-2 underline-offset-3 decoration-gray-900 dark:decoration-white"
+        style="text-decoration-color:"
+      >
+        Le Milieu du monde
+      </a>
+    </h3>
+
+    <div class="p-200">
+      <div class="mt-2">
+                  <span>Suisse, France</span>
+        
+                  · <span>1974</span>
+        
+                  · <span>105'</span>
+        
+                  · <span>v.o.fr</span>
+        
+                  ·               <span
+  id="formatLabel"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Digital Cinema&quot;}"
+  class="init-tippy "
+>
+  <span>DC</span>
+</span>
+                    
+                <span class="relative inline-flex items-end -top-px px-1 align-middle border border-gray-900 h-4.5 h-50 rounded-2xl dark:border-white">
+          <span class="cursor-pointer">
+              <span
+  id="requiredAge"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Age l\u00e9gal \/ conseill\u00e9&quot;}"
+  class="init-tippy "
+>
+  14
+                              (16)
+</span>
+          </span>
+        </span>
+      </div>
+              <div>
+          <b>De</b> <span>Alain Tanner</span>
+        </div>
+                    <div>
+          <b>Avec</b> <span>Olimpia Carlisi, Philippe Léotard, Juliet Berto</span>
+        </div>
+          </div>
+  </div>
+
+      <div>
+      <h4 class="hidden mb-1 h-200 md:block">Séance(s)</h4>
+      <table class="w-full cin-border-b">
+                  <tr
+            class="group cin-border-t"
+          >
+            <td class="py-2">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24191"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                                      <span
+  id="screeningEvent138603"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Ev\u00e9nement&quot;}"
+  class="init-tippy "
+>
+  <span class="py-1 text-white bg-gray-900 dark:text-gray-900 dark:bg-white px-0.75">
+                                                  <span class="inline-block">Je</span>
+                          <span>22 octobre</span>
+                                              </span>
+</span>
+                                  </a>
+                                                      </td>
+            <td class="py-1">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24191"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                  20:00
+                </a>
+                                                      </td>
+            <td class="py-1">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24191"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                  <span
+  id="broadcastLocation138603"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;CAP 2 \u2013 Capitole, Salle Lucienne Schnegg&quot;}"
+  class="init-tippy "
+>
+  CAP 2
+</span>
+                </a>
+                                                      </td>
+          </tr>
+              </table>
+    </div>
+  </div>
+                                        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-3 md:gap-x-4 mb-10 last:mb-0 md:mb-0 md:py-4 md:cin-border-t last:pb-0 dark:text-white">
+  <a href="/films/ecal-bachelor-programme-de-films-de-diplme" class="block group sm:col-span-2 md:col-span-1">
+    <div class="relative aspect-w-2.39 aspect-h-1">
+      
+      <img
+        src="/pictures/6d0d5f49bf5dedf73323bb81690adf61.jpg"
+        srcset="/pictures/6d0d5f49bf5dedf73323bb81690adf61.jpg 1x, /pictures/6d0d5f49bf5dedf73323bb81690adf61.jpg 2x"
+        alt="ECAL Bachelor : Programme de films de diplôme"
+        sizes="(min-width: 1599px) 376px, (min-width: 959px) calc(25vw - 3rem), calc(100vw - 1.5rem)"
+      />
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 group-hover:bg-opacity-10 group-hover:bg-gray-900 transition-all"
+      ></div>
+    </div>
+  </a>
+
+  <div>
+          <p
+        class="h-100 text-gray-900 dark:text-white"
+        style="color: "
+      >
+        Les films de diplôme de l’ECAL
+      </p>
+        <h3 class="italic h-300">
+      <a
+        href="/films/ecal-bachelor-programme-de-films-de-diplme"
+        class="decoration-underline underline-thickness-2 underline-offset-3 decoration-gray-900 dark:decoration-white"
+        style="text-decoration-color:"
+      >
+        ECAL Bachelor : Programme de films de diplôme
+      </a>
+    </h3>
+
+    <div class="p-200">
+      <div class="mt-2">
+                  <span>Suisse</span>
+        
+                  · <span>2026</span>
+        
+                  · <span>132'</span>
+        
+                  · <span>v.o.fr</span>
+        
+                  ·               <span
+  id="formatLabel"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Digital Cinema&quot;}"
+  class="init-tippy "
+>
+  <span>DC</span>
+</span>
+                    
+                <span class="relative inline-flex items-end -top-px px-1 align-middle border border-gray-900 h-4.5 h-50 rounded-2xl dark:border-white">
+          <span class="cursor-pointer">
+              <span
+  id="requiredAge"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Age l\u00e9gal \/ conseill\u00e9&quot;}"
+  class="init-tippy "
+>
+  16
+                              (16)
+</span>
+          </span>
+        </span>
+      </div>
+              <div>
+          <b>De</b> <span>Divers cinéastes</span>
+        </div>
+                </div>
+  </div>
+
+      <div>
+      <h4 class="hidden mb-1 h-200 md:block">Séance(s)</h4>
+      <table class="w-full cin-border-b">
+                  <tr
+            class="group cin-border-t"
+          >
+            <td class="py-2">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24205"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                                      <span
+  id="screeningEvent138617"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Ev\u00e9nement&quot;}"
+  class="init-tippy "
+>
+  <span class="py-1 text-white bg-gray-900 dark:text-gray-900 dark:bg-white px-0.75">
+                                                  <span class="inline-block">Ma</span>
+                          <span>27 octobre</span>
+                                              </span>
+</span>
+                                  </a>
+                                                      </td>
+            <td class="py-1">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24205"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                  19:00
+                </a>
+                                                      </td>
+            <td class="py-1">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24205"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                  <span
+  id="broadcastLocation138617"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;CAP 1 \u2013 Capitole, Salle Freddy Buache&quot;}"
+  class="init-tippy "
+>
+  CAP 1
+</span>
+                </a>
+                                                      </td>
+          </tr>
+              </table>
+    </div>
+  </div>
+                                        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-3 md:gap-x-4 mb-10 last:mb-0 md:mb-0 md:py-4 md:cin-border-t last:pb-0 dark:text-white">
+  <a href="/films/master-ecal-head-programme-de-films-de-diplme" class="block group sm:col-span-2 md:col-span-1">
+    <div class="relative aspect-w-2.39 aspect-h-1">
+      
+      <img
+        src="/pictures/8941734497a1f17597526cf60d12b771.jpg"
+        srcset="/pictures/8941734497a1f17597526cf60d12b771.jpg 1x, /pictures/8941734497a1f17597526cf60d12b771.jpg 2x"
+        alt="Master ECAL/HEAD : Programme de films de diplôme"
+        sizes="(min-width: 1599px) 376px, (min-width: 959px) calc(25vw - 3rem), calc(100vw - 1.5rem)"
+      />
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 group-hover:bg-opacity-10 group-hover:bg-gray-900 transition-all"
+      ></div>
+    </div>
+  </a>
+
+  <div>
+          <p
+        class="h-100 text-gray-900 dark:text-white"
+        style="color: "
+      >
+        Les films de diplôme de l’ECAL
+      </p>
+        <h3 class="italic h-300">
+      <a
+        href="/films/master-ecal-head-programme-de-films-de-diplme"
+        class="decoration-underline underline-thickness-2 underline-offset-3 decoration-gray-900 dark:decoration-white"
+        style="text-decoration-color:"
+      >
+        Master ECAL/HEAD : Programme de films de diplôme
+      </a>
+    </h3>
+
+    <div class="p-200">
+      <div class="mt-2">
+        
+                  · <span>2026</span>
+        
+                  · <span>101'</span>
+        
+                  · <span>v.o.fr</span>
+        
+                  ·               <span
+  id="formatLabel"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Digital Cinema&quot;}"
+  class="init-tippy "
+>
+  <span>DC</span>
+</span>
+                    
+                <span class="relative inline-flex items-end -top-px px-1 align-middle border border-gray-900 h-4.5 h-50 rounded-2xl dark:border-white">
+          <span class="cursor-pointer">
+              <span
+  id="requiredAge"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Age l\u00e9gal \/ conseill\u00e9&quot;}"
+  class="init-tippy "
+>
+  
+</span>
+          </span>
+        </span>
+      </div>
+              <div>
+          <b>De</b> <span>Divers cinéastes</span>
+        </div>
+                </div>
+  </div>
+
+      <div>
+      <h4 class="hidden mb-1 h-200 md:block">Séance(s)</h4>
+      <table class="w-full cin-border-b">
+                  <tr
+            class="group cin-border-t"
+          >
+            <td class="py-2">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24226"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                                      <span
+  id="screeningEvent138618"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Ev\u00e9nement&quot;}"
+  class="init-tippy "
+>
+  <span class="py-1 text-white bg-gray-900 dark:text-gray-900 dark:bg-white px-0.75">
+                                                  <span class="inline-block">Ma</span>
+                          <span>27 octobre</span>
+                                              </span>
+</span>
+                                  </a>
+                                                      </td>
+            <td class="py-1">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24226"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                  19:30
+                </a>
+                                                      </td>
+            <td class="py-1">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24226"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                  <span
+  id="broadcastLocation138618"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;CAP 2 \u2013 Capitole, Salle Lucienne Schnegg&quot;}"
+  class="init-tippy "
+>
+  CAP 2
+</span>
+                </a>
+                                                      </td>
+          </tr>
+              </table>
+    </div>
+  </div>
+                                        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-3 md:gap-x-4 mb-10 last:mb-0 md:mb-0 md:py-4 md:cin-border-t last:pb-0 dark:text-white">
+  <a href="/films/l-art-du-temps-programme-sur-l-horlogerie" class="block group sm:col-span-2 md:col-span-1">
+    <div class="relative aspect-w-2.39 aspect-h-1">
+      
+      <img
+        src="/pictures/956ee42090ffa22d4acaf34769af2c61.jpg"
+        srcset="/pictures/956ee42090ffa22d4acaf34769af2c61.jpg 1x, /pictures/956ee42090ffa22d4acaf34769af2c61.jpg 2x"
+        alt="L’Art du Temps: programme sur l’horlogerie"
+        sizes="(min-width: 1599px) 376px, (min-width: 959px) calc(25vw - 3rem), calc(100vw - 1.5rem)"
+      />
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 group-hover:bg-opacity-10 group-hover:bg-gray-900 transition-all"
+      ></div>
+    </div>
+  </a>
+
+  <div>
+          <p
+        class="h-100 text-gray-475 dark:text-white"
+        style="color: "
+      >
+        Trésors des archives
+      </p>
+        <h3 class="italic h-300">
+      <a
+        href="/films/l-art-du-temps-programme-sur-l-horlogerie"
+        class="decoration-underline underline-thickness-2 underline-offset-3 decoration-gray-900 dark:decoration-white"
+        style="text-decoration-color:"
+      >
+        L’Art du Temps: programme sur l’horlogerie
+      </a>
+    </h3>
+
+    <div class="p-200">
+      <div class="mt-2">
+                  <span>Suisse</span>
+        
+                  · <span>1931-1969</span>
+        
+                  · <span>65'</span>
+        
+                  · <span>muet</span>
+        
+                  ·               <span
+  id="formatLabel"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Digital Cinema&quot;}"
+  class="init-tippy "
+>
+  <span>DC</span>
+</span>
+                    
+                <span class="relative inline-flex items-end -top-px px-1 align-middle border border-gray-900 h-4.5 h-50 rounded-2xl dark:border-white">
+          <span class="cursor-pointer">
+              <span
+  id="requiredAge"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Age l\u00e9gal \/ conseill\u00e9&quot;}"
+  class="init-tippy "
+>
+  8
+                              (12)
+</span>
+          </span>
+        </span>
+      </div>
+              <div>
+          <b>De</b> <span>Divers cinéastes</span>
+        </div>
+                </div>
+  </div>
+
+      <div>
+      <h4 class="hidden mb-1 h-200 md:block">Séance(s)</h4>
+      <table class="w-full cin-border-b">
+                  <tr
+            class="group cin-border-t"
+          >
+            <td class="py-2">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24220"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                                      <span
+  id="screeningEvent138620"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Ev\u00e9nement&quot;}"
+  class="init-tippy "
+>
+  <span class="py-1 text-white bg-gray-900 dark:text-gray-900 dark:bg-white px-0.75">
+                                                  <span class="inline-block">Me</span>
+                          <span>28 octobre</span>
+                                              </span>
+</span>
+                                  </a>
+                                                      </td>
+            <td class="py-1">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24220"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                  20:00
+                </a>
+                                                      </td>
+            <td class="py-1">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24220"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                  <span
+  id="broadcastLocation138620"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;CAP 2 \u2013 Capitole, Salle Lucienne Schnegg&quot;}"
+  class="init-tippy "
+>
+  CAP 2
+</span>
+                </a>
+                                                      </td>
+          </tr>
+              </table>
+    </div>
+  </div>
+                                        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-3 md:gap-x-4 mb-10 last:mb-0 md:mb-0 md:py-4 md:cin-border-t last:pb-0 dark:text-white">
+  <a href="/films/casper" class="block group sm:col-span-2 md:col-span-1">
+    <div class="relative aspect-w-2.39 aspect-h-1">
+      
+      <img
+        src="/pictures/13838a10ac34c8226069f8ae0998eade.jpg"
+        srcset="/pictures/13838a10ac34c8226069f8ae0998eade.jpg 1x, /pictures/13838a10ac34c8226069f8ae0998eade.jpg 2x"
+        alt="Casper"
+        sizes="(min-width: 1599px) 376px, (min-width: 959px) calc(25vw - 3rem), calc(100vw - 1.5rem)"
+      />
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 group-hover:bg-opacity-10 group-hover:bg-gray-900 transition-all"
+      ></div>
+    </div>
+  </a>
+
+  <div>
+          <p
+        class="h-100 text-gray-475 dark:text-white"
+        style="color: "
+      >
+        Ciné-familles
+      </p>
+        <h3 class="italic h-300">
+      <a
+        href="/films/casper"
+        class="decoration-underline underline-thickness-2 underline-offset-3 decoration-gray-900 dark:decoration-white"
+        style="text-decoration-color:"
+      >
+        Casper
+      </a>
+    </h3>
+
+    <div class="p-200">
+      <div class="mt-2">
+                  <span>USA</span>
+        
+                  · <span>1995</span>
+        
+                  · <span>100'</span>
+        
+                  · <span>v.f.</span>
+        
+                  ·               <span>35mm</span>
+                    
+                  <span class="relative inline-flex items-end -top-px px-1 align-middle border border-gray-900 h-4.5 h-50 rounded-2xl dark:border-white">
+            <span
+  id="noRequiredAge"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Famille&quot;}"
+  class="init-tippy "
+>
+  F
+</span>
+          </span>
+                <span class="relative inline-flex items-end -top-px px-1 align-middle border border-gray-900 h-4.5 h-50 rounded-2xl dark:border-white">
+          <span class="cursor-pointer">
+              <span
+  id="requiredAge"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Age l\u00e9gal \/ conseill\u00e9&quot;}"
+  class="init-tippy "
+>
+  7
+                              (7)
+</span>
+          </span>
+        </span>
+      </div>
+              <div>
+          <b>De</b> <span>Brad Silberling</span>
+        </div>
+                    <div>
+          <b>Avec</b> <span>Christina Ricci, Bill Pullman, Cathy Moriarty</span>
+        </div>
+          </div>
+  </div>
+
+      <div>
+      <h4 class="hidden mb-1 h-200 md:block">Séance(s)</h4>
+      <table class="w-full cin-border-b">
+                  <tr
+            class="group cin-border-t"
+          >
+            <td class="py-2">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24214"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                                      <span
+  id="screeningEvent138628"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Ev\u00e9nement&quot;}"
+  class="init-tippy "
+>
+  <span class="py-1 text-white bg-gray-900 dark:text-gray-900 dark:bg-white px-0.75">
+                                                  <span class="inline-block">Sa</span>
+                          <span>31 octobre</span>
+                                              </span>
+</span>
+                                  </a>
+                                                      </td>
+            <td class="py-1">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24214"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                  15:00
+                </a>
+                                                      </td>
+            <td class="py-1">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24214"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                  <span
+  id="broadcastLocation138628"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;CAP 1 \u2013 Capitole, Salle Freddy Buache&quot;}"
+  class="init-tippy "
+>
+  CAP 1
+</span>
+                </a>
+                                                      </td>
+          </tr>
+              </table>
+    </div>
+  </div>
+                                        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-3 md:gap-x-4 mb-10 last:mb-0 md:mb-0 md:py-4 md:cin-border-t last:pb-0 dark:text-white">
+  <a href="/films/les-griffes-de-la-nuit" class="block group sm:col-span-2 md:col-span-1">
+    <div class="relative aspect-w-2.39 aspect-h-1">
+      
+      <img
+        src="/pictures/12ca347f0435649b2162239772d390ec.jpg"
+        srcset="/pictures/12ca347f0435649b2162239772d390ec.jpg 1x, /pictures/12ca347f0435649b2162239772d390ec.jpg 2x"
+        alt="A Nightmare on Elm Street"
+        sizes="(min-width: 1599px) 376px, (min-width: 959px) calc(25vw - 3rem), calc(100vw - 1.5rem)"
+      />
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 group-hover:bg-opacity-10 group-hover:bg-gray-900 transition-all"
+      ></div>
+    </div>
+  </a>
+
+  <div>
+          <p
+        class="h-100 text-gray-475 dark:text-white"
+        style="color: "
+      >
+        Le samedi de la peur : &quot;Les Griffes de la nuit&quot;
+      </p>
+          <p
+        class="h-100 text-gray-475 dark:text-white"
+        style="color: "
+      >
+        Les films Travelling avec la RTS
+      </p>
+        <h3 class="italic h-300">
+      <a
+        href="/films/les-griffes-de-la-nuit"
+        class="decoration-underline underline-thickness-2 underline-offset-3 decoration-gray-900 dark:decoration-white"
+        style="text-decoration-color:"
+      >
+        A Nightmare on Elm Street
+      </a>
+    </h3>
+
+    <div class="p-200">
+      <div class="mt-2">
+                  <span>USA</span>
+        
+                  · <span>1984</span>
+        
+                  · <span>91'</span>
+        
+                  · <span>v.o. s-t fr.</span>
+        
+                  ·               <span>35mm</span>
+                    
+                <span class="relative inline-flex items-end -top-px px-1 align-middle border border-gray-900 h-4.5 h-50 rounded-2xl dark:border-white">
+          <span class="cursor-pointer">
+              <span
+  id="requiredAge"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Age l\u00e9gal \/ conseill\u00e9&quot;}"
+  class="init-tippy "
+>
+  18
+                              (18)
+</span>
+          </span>
+        </span>
+      </div>
+              <div>
+          <b>De</b> <span>Wes Craven</span>
+        </div>
+                    <div>
+          <b>Avec</b> <span>Robert Englund, Johnny Depp, Heather Langenkamp</span>
+        </div>
+          </div>
+  </div>
+
+      <div>
+      <h4 class="hidden mb-1 h-200 md:block">Séance(s)</h4>
+      <table class="w-full cin-border-b">
+                  <tr
+            class="group cin-border-t"
+          >
+            <td class="py-2">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24212"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                                      <span
+  id="screeningEvent138631"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Ev\u00e9nement&quot;}"
+  class="init-tippy "
+>
+  <span class="py-1 text-white bg-gray-900 dark:text-gray-900 dark:bg-white px-0.75">
+                                                  <span class="inline-block">Sa</span>
+                          <span>31 octobre</span>
+                                              </span>
+</span>
+                                  </a>
+                                                      </td>
+            <td class="py-1">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24212"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                  21:00
+                </a>
+                                                      </td>
+            <td class="py-1">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24212"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                  <span
+  id="broadcastLocation138631"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;CAP 1 \u2013 Capitole, Salle Freddy Buache&quot;}"
+  class="init-tippy "
+>
+  CAP 1
+</span>
+                </a>
+                                                      </td>
+          </tr>
+              </table>
+    </div>
+  </div>
+                                        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-3 md:gap-x-4 mb-10 last:mb-0 md:mb-0 md:py-4 md:cin-border-t last:pb-0 dark:text-white">
+  <a href="/films/marathon-le-seigneur-des-anneaux" class="block group sm:col-span-2 md:col-span-1">
+    <div class="relative aspect-w-2.39 aspect-h-1">
+      
+      <img
+        src="/pictures/f562eac3a357d9bc3a38a4bc726d0962.jpg"
+        srcset="/pictures/f562eac3a357d9bc3a38a4bc726d0962.jpg 1x, /pictures/f562eac3a357d9bc3a38a4bc726d0962.jpg 2x"
+        alt="Marathon &quot;Lord of the Rings&quot;"
+        sizes="(min-width: 1599px) 376px, (min-width: 959px) calc(25vw - 3rem), calc(100vw - 1.5rem)"
+      />
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 group-hover:bg-opacity-10 group-hover:bg-gray-900 transition-all"
+      ></div>
+    </div>
+  </a>
+
+  <div>
+          <p
+        class="h-100 "
+        style="color: #ffbb22"
+      >
+        Marathon Travelling avec la RTS: &quot;The Lord of the Rings&quot;
+      </p>
+        <h3 class="italic h-300">
+      <a
+        href="/films/marathon-le-seigneur-des-anneaux"
+        class="decoration-underline underline-thickness-2 underline-offset-3 decoration-gray-900 dark:decoration-white"
+        style="text-decoration-color:#ffbb22"
+      >
+        Marathon &quot;Lord of the Rings&quot;
+      </a>
+    </h3>
+
+    <div class="p-200">
+      <div class="mt-2">
+                  <span>NouvelleZélande, USA</span>
+        
+        
+                  · <span>752'</span>
+        
+                  · <span>v.o. s-t fr.</span>
+        
+                  ·               <span
+  id="formatLabel"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Digital Cinema&quot;}"
+  class="init-tippy "
+>
+  <span>DC</span>
+</span>
+                    
+                <span class="relative inline-flex items-end -top-px px-1 align-middle border border-gray-900 h-4.5 h-50 rounded-2xl dark:border-white">
+          <span class="cursor-pointer">
+              <span
+  id="requiredAge"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Age l\u00e9gal \/ conseill\u00e9&quot;}"
+  class="init-tippy "
+>
+  14
+                              (14)
+</span>
+          </span>
+        </span>
+      </div>
+              <div>
+          <b>De</b> <span>Peter Jackson</span>
+        </div>
+                    <div>
+          <b>Avec</b> <span>Elijah Wood, Viggo Mortensen, Liv Tyler</span>
+        </div>
+          </div>
+  </div>
+
+      <div>
+      <h4 class="hidden mb-1 h-200 md:block">Séance(s)</h4>
+      <table class="w-full cin-border-b">
+                  <tr
+            class="group cin-border-t"
+          >
+            <td class="py-2">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24395"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                                      <span
+  id="screeningEvent138293"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;Ev\u00e9nement&quot;}"
+  class="init-tippy "
+>
+  <span class="py-1 text-white bg-gray-900 dark:text-gray-900 dark:bg-white px-0.75">
+                                                  <span class="inline-block">Di</span>
+                          <span>8 novembre</span>
+                                              </span>
+</span>
+                                  </a>
+                                                      </td>
+            <td class="py-1">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24395"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                  10:00
+                </a>
+                                                      </td>
+            <td class="py-1">
+                              <a
+                  href="https://cinematheque.ticketack.com/screening/buy/24395"
+                  target="_blank"
+                  class="sell block group-hover:text-gray-700"
+                >
+                  <span
+  id="broadcastLocation138293"
+  data-options="{&quot;placement&quot;:&quot;top&quot;,&quot;content&quot;:&quot;CAP 1 \u2013 Capitole, Salle Freddy Buache&quot;}"
+  class="init-tippy "
+>
+  CAP 1
+</span>
+                </a>
+                                                      </td>
+          </tr>
+              </table>
+    </div>
+  </div>
+                              </div>
+      
+    </div>
+  </div>
+  </main>
+
+  <footer
+  class="text-gray-900 bg-gray-200 dark:bg-gray-875 dark:text-white"
+  data-immerser-layer
+  data-immerser-layer-config='{"header": "footer-contrast"}'
+>
+  <div class="container">
+    <div class="container-grid space-y-4">
+      <div class="mt-10 mb-8 sm:mb-6 container-9/12">
+        <div class="grid sm:grid-cols-9 gap-x-3 md:gap-x-4">
+          <script>
+            function onSubmit(token) {
+              document.getElementById("newsletter-form-footer").submit();
+            }
+          </script>
+          <div class="sm:col-span-4">
+            <h4 class="h-400">Newsletter</h4>
+            <p class="mt-2 mb-6 sm:mb-4 p-300">
+              Restez informé en vous abonnant à notre newsletter.
+            </p>
+            <a
+              href="https://cinematheque-suisse.getresponsesite.com/"
+              target="_blank"
+              class="btn btn-primary btn-md btn-icon-right"
+              >
+              <span class="h-300">S'inscrire</span>
+              <svg class="icon icon-chevron-right" aria-hidden="true">
+    <use xlink:href="#chevron-right"></use>
+  </svg>
+            </a>
+          </div>
+                  </div>
+        <div class="cin-border-l">
+          <ul
+            class="mt-10 list-none cin-border-t sm:hidden grid grid-cols-3"
+          >
+                          <li class="cin-border-r">
+                <span class="flex items-center justify-center w-full h-full cin-border-b">
+                  <a
+                    href="https://www.facebook.com/Cinemathequesuisse"
+                    class="py-5 hover:text-red-500 dark:hover:text-white dark:hover:text-opacity-45 transition-colors px-11"
+                    target="_blank"
+                  >
+                    <svg class="icon transform transition-all duration-300 icon-facebook" aria-hidden="true">
+    <use xlink:href="#facebook"></use>
+  </svg>
+                  </a>
+                </span>
+              </li>
+                                      <li class="cin-border-r">
+                <span class="flex items-center justify-center w-full h-full cin-border-b">
+                  <a
+                    href="https://twitter.com/cinemathequech"
+                    class="py-5 hover:text-red-500 dark:hover:text-white dark:hover:text-opacity-45 transition-colors px-11"
+                    target="_blank"
+                  >
+                    <svg class="icon transform transition-all duration-300 icon-twitter" aria-hidden="true">
+    <use xlink:href="#twitter"></use>
+  </svg>
+                  </a>
+                </span>
+              </li>
+                                      <li class="cin-border-r">
+                <span class="flex items-center justify-center w-full h-full cin-border-b">
+                  <a
+                    href="https://www.instagram.com/cinemathequesuisse/"
+                    class="py-5 hover:text-red-500 dark:hover:text-white dark:hover:text-opacity-45 transition-colors px-11"
+                    target="_blank"
+                  >
+                    <svg class="icon transform transition-all duration-300 icon-instagram" aria-hidden="true">
+    <use xlink:href="#instagram"></use>
+  </svg>
+                  </a>
+                </span>
+              </li>
+                                      <li class="cin-border-r">
+                <span class="flex items-center justify-center w-full h-full cin-border-b">
+                  <a
+                    href="https://linkedin.com/company/cinemathequesuisse"
+                    class="py-5 hover:text-red-500 dark:hover:text-white dark:hover:text-opacity-45 transition-colors px-11"
+                    target="_blank"
+                  >
+                    <svg class="icon transform transition-all duration-300 icon-linkedin" aria-hidden="true">
+    <use xlink:href="#linkedin"></use>
+  </svg>
+                  </a>
+                </span>
+              </li>
+                                      <li class="cin-border-r">
+                <span class="flex items-center justify-center w-full h-full cin-border-b">
+                  <a
+                    href="https://www.youtube.com/user/laCinemathequeSuisse"
+                    class="py-5 hover:text-red-500 dark:hover:text-white dark:hover:text-opacity-45 transition-colors px-11"
+                    target="_blank"
+                  >
+                    <svg class="icon transform transition-all duration-300 icon-youtube" aria-hidden="true">
+    <use xlink:href="#youtube"></use>
+  </svg>
+                  </a>
+                </span>
+              </li>
+                                      <li class="cin-border-r">
+                <span class="flex items-center justify-center w-full h-full cin-border-b">
+                  <a
+                    href="https://vimeo.com/cinemathequesuisse"
+                    class="py-5 hover:text-red-500 dark:hover:text-white dark:hover:text-opacity-45 transition-colors px-11"
+                    target="_blank"
+                  >
+                    <svg class="icon transform transition-all duration-300 icon-vimeo" aria-hidden="true">
+    <use xlink:href="#vimeo"></use>
+  </svg>
+                  </a>
+                </span>
+              </li>
+                      </ul>
+        </div>
+        <hr class="mt-10 cin-border-t border-none h-0.5" />
+        <div class="grid grid-cols-9 gap-x-3 md:gap-x-4">
+          <nav aria-label="Sitemap" class="mt-4 col-span-6">
+            <ul class="list-none space-y-2 sm:space-y-0">
+                                                        </ul>
+          </nav>
+          <ul
+            class="hidden list-none cin-border-l sm:grid grid-cols-3 col-span-3"
+          >
+                          <li class="cin-border-r">
+                <span class="flex items-center justify-center w-full h-full cin-border-b">
+                  <a
+                    href="https://www.facebook.com/Cinemathequesuisse"
+                    class="py-5 hover:text-red-500 dark:hover:text-white dark:hover:text-opacity-45 transition-colors px-11"
+                    target="_blank"
+                  >
+                    <svg class="icon icon-facebook" aria-hidden="true">
+    <use xlink:href="#facebook"></use>
+  </svg>
+                  </a>
+                </span>
+              </li>
+                                      <li class="cin-border-r">
+                <span class="flex items-center justify-center w-full h-full cin-border-b">
+                  <a
+                    href="https://twitter.com/cinemathequech"
+                    class="py-5 hover:text-red-500 dark:hover:text-white dark:hover:text-opacity-45 transition-colors px-11"
+                    target="_blank"
+                  >
+                    <svg class="icon icon-twitter" aria-hidden="true">
+    <use xlink:href="#twitter"></use>
+  </svg>
+                  </a>
+                </span>
+              </li>
+                                      <li class="cin-border-r">
+                <span class="flex items-center justify-center w-full h-full cin-border-b">
+                  <a
+                    href="https://www.instagram.com/cinemathequesuisse/"
+                    class="py-5 hover:text-red-500 dark:hover:text-white dark:hover:text-opacity-45 transition-colors px-11"
+                    target="_blank"
+                  >
+                    <svg class="icon icon-instagram" aria-hidden="true">
+    <use xlink:href="#instagram"></use>
+  </svg>
+                  </a>
+                </span>
+              </li>
+                                      <li class="cin-border-r">
+                <span class="flex items-center justify-center w-full h-full cin-border-b">
+                  <a
+                    href="https://linkedin.com/company/cinemathequesuisse"
+                    class="py-5 hover:text-red-500 dark:hover:text-white dark:hover:text-opacity-45 transition-colors px-11"
+                    target="_blank"
+                  >
+                    <svg class="icon icon-linkedin" aria-hidden="true">
+    <use xlink:href="#linkedin"></use>
+  </svg>
+                  </a>
+                </span>
+              </li>
+                                      <li class="cin-border-r">
+                <span class="flex items-center justify-center w-full h-full cin-border-b">
+                  <a
+                    href="https://www.youtube.com/user/laCinemathequeSuisse"
+                    class="py-5 hover:text-red-500 dark:hover:text-white dark:hover:text-opacity-45 transition-colors px-11"
+                    target="_blank"
+                  >
+                    <svg class="icon icon-youtube" aria-hidden="true">
+    <use xlink:href="#youtube"></use>
+  </svg>
+                  </a>
+                </span>
+              </li>
+                                      <li class="cin-border-r">
+                <span class="flex items-center justify-center w-full h-full cin-border-b">
+                  <a
+                    href="https://vimeo.com/cinemathequesuisse"
+                    class="py-5 hover:text-red-500 dark:hover:text-white dark:hover:text-opacity-45 transition-colors px-11"
+                    target="_blank"
+                  >
+                    <svg class="icon icon-vimeo" aria-hidden="true">
+    <use xlink:href="#vimeo"></use>
+  </svg>
+                  </a>
+                </span>
+              </li>
+                      </ul>
+        </div>
+        <hr class="mt-10 mb-4 cin-border-t border-none h-0.5 sm:mt-22 sm:mb-6" />
+        <div class="justify-between sm:flex">
+          <p class="text-gray-700 dark:text-gray-600 p-200">
+            © 2022 Cinémathèque suisse
+          </p>
+          <p class="mt-1 text-gray-700 dark:text-gray-600 sm:mt-0 p-200">
+            Réalisé par
+            <a
+              href="https://antistatique.net/"
+              target="_blank"
+              class="underline hover:text-red-500 dark:hover:text-white dark:hover:text-opacity-45 transition-colors"
+              rel="noreferrer"
+            >
+              Antistatique
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<span hidden="">
+  👇 =========================== Icons sprite =========================== 👇
+</span>
+<div style="display: none;">
+  <svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="arrow-anchor"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M4 2.293l.354.353L10 8.293V3h1v7H4V9h5.293L3.646 3.354 3.293 3 4 2.293z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="arrow-bottom"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M7 0v9.293l3.146-3.147.354-.353.707.707-.353.354-4 4-.354.353-.353-.353-4-4-.354-.354.707-.707.354.353L6 9.293V0h1z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="arrow-external-link"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M2 9.704l.354-.354L8 3.704v5.292h1v-7H2v1h5.293L1.647 8.643l-.354.353.707.708z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="arrow-left"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M6.207 1.5l-.353.354L2.707 5H12v1H2.707l3.147 3.146.353.354-.707.707-.353-.353-4-4L.793 5.5l.354-.354 4-4L5.5.793l.707.707z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="arrow-right"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M6.5.793l.354.353 4 4 .353.354-.353.354-4 4-.354.353-.707-.707.353-.354L9.293 6H0V5h9.293L6.146 1.854 5.793 1.5 6.5.793z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="arrow-top"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M5.5.793l.354.353 4 4 .353.354-.707.707-.353-.353L6 2.707V12H5V2.707L1.854 5.854l-.354.353L.793 5.5l.354-.354 4-4L5.5.793z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    id="calendar"
+  >
+    <path
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="square"
+      d="M1 3h14v11H1zm3-2v2m8-2v2M1 7h14"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="check-12"
+  >
+    <path
+      d="M4.17 7.89L2.06 5.78 1 6.84 4.17 10l6.35-6.45-.96-1.05-5.39 5.39z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    id="check-16"
+  >
+    <path
+      d="M5.61 10.89L2.5 7.78 1.44 8.84 5.61 13l8.95-8.95L13.5 3l-7.89 7.89z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    id="check-24"
+  >
+    <path
+      d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="chevron-bottom"
+  >
+    <path
+      d="M2 4.25L6 8l4-3.75"
+      stroke="currentColor"
+      stroke-linecap="square"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="chevron-left"
+  >
+    <path
+      d="M7.75 2L4 6l3.75 4"
+      stroke="currentColor"
+      stroke-linecap="square"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="chevron-right"
+  >
+    <path
+      d="M4.25 2L8 6l-3.75 4"
+      stroke="currentColor"
+      stroke-linecap="square"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="chevron-sort"
+  >
+    <path
+      d="M3 8.25L6 11l3-2.75m0-4.5L6 1 3 3.75"
+      stroke="currentColor"
+      stroke-linecap="square"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="chevron-top"
+  >
+    <path
+      d="M10 7.75L6 4 2 7.75"
+      stroke="currentColor"
+      stroke-linecap="square"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="cross-big"
+  >
+    <path d="M1 1l10 10m0-10L1 11" stroke="currentColor"></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="cross-small"
+  >
+    <path d="M3 3l6 6m0-6L3 9" stroke="currentColor"></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    id="email-16"
+  >
+    <path
+      d="M1 5l7 4 7-4"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+    ></path>
+    <path
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      d="M1 2h14v12H1z"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    id="email-24"
+  >
+    <path
+      d="M12 12.713L.015 3h23.971L12 12.713zm-5.425-1.822L0 5.562v12.501l6.575-7.172zm10.85 0L24 18.063V5.562l-6.575 5.329zm-1.557 1.261L12 15.287l-3.868-3.135L.022 21h23.956l-8.11-8.848z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    id="facebook"
+  >
+    <path
+      d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zm-3 7h-1.924C13.461 7 13 7.252 13 7.889V9h3l-.238 3H13v8h-3v-8H8V9h2V7.077C10 5.055 11.064 4 13.461 4H16v3z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    id="filters"
+  >
+    <path
+      fill="currentColor"
+      d="M0 3h16v2H0zm2 4h12v2H2zm2 4h8v2H4z"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="fullscreen-12"
+  >
+    <path
+      fill="currentColor"
+      d="M8 0h4v1H8zM4 12H0v-1h4zM0 4V0h1v4zm12 4v4h-1V8z"
+    ></path>
+    <path
+      fill="currentColor"
+      d="M11 0h1v4h-1zM1 12H0V8h1zM0 1V0h4v1zm12 10v1H8v-1z"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    id="fullscreen-16"
+  >
+    <path fill="currentColor" d="M1 1h5v2H1z"></path>
+    <path fill="currentColor" d="M3 1v5H1V1zM1 15v-5h2v5z"></path>
+    <path fill="currentColor" d="M1 13h5v2H1zm14 2h-5v-2h5z"></path>
+    <path fill="currentColor" d="M13 15v-5h2v5zm2-14v5h-2V1z"></path>
+    <path fill="currentColor" d="M15 3h-5V1h5z"></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    id="gallery"
+  >
+    <path
+      d="M9 4h3v8H4V9"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="square"
+    ></path>
+    <path
+      d="M12 7h3v8H7v-3M1 1h8v8H1z"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="square"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    id="instagram"
+  >
+    <path
+      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    id="linkedin"
+  >
+    <path
+      d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    id="menu"
+  >
+    <path
+      fill="currentColor"
+      d="M2 7h20v2H2zm0 4h20v2H2zm0 4h20v2H2z"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="minus"
+  >
+    <path
+      d="M1.5 5.5h10"
+      stroke="currentColor"
+      stroke-linecap="square"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    id="moon"
+  >
+    <path
+      d="M6.25 1C3.187 1.788 1 4.588 1 7.912A7.058 7.058 0 008.088 15c3.325 0 6.037-2.188 6.912-5.25C9.662 11.238 4.762 6.338 6.25 1z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    id="phone"
+  >
+    <path
+      d="M10.657 9.07L9.592 10.4A11.229 11.229 0 015.6 6.408l1.33-1.065a.904.904 0 00.261-1.073L5.978 1.537a.904.904 0 00-1.054-.508L1.68 2.561a.911.911 0 00-.672 1.005 13.422 13.422 0 0011.426 11.425.91.91 0 001.004-.671l1.533-3.243a.904.904 0 00-.508-1.054L11.73 8.809a.906.906 0 00-1.073.26z"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    id="pin"
+  >
+    <g clip-path="url(#pin_svg__a)" fill="currentColor">
+      <path d="M8 9a2 2 0 100-4 2 2 0 000 4z"></path>
+      <path
+        d="M7.3 15.7c-.1-.1-4.2-3.7-4.2-3.8C1.7 10.7 1 8.9 1 7c0-3.9 3.1-7 7-7s7 3.1 7 7c0 1.9-.7 3.7-2.1 5-.1.1-4.1 3.7-4.2 3.8-.4.3-1 .3-1.4-.1zm-2.7-5l3.4 3 3.4-3c1-1 1.6-2.2 1.6-3.6 0-2.8-2.2-5-5-5S3 4.2 3 7c0 1.4.6 2.7 1.6 3.7 0-.1 0-.1 0 0z"
+      ></path>
+    </g>
+    <defs>
+      <clipPath id="pin_svg__a">
+        <path fill="#fff" d="M0 0h16v16H0z"></path>
+      </clipPath>
+    </defs></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="placeholder-12"
+  >
+    <path stroke="currentColor" d="M.5.5h11v11H.5z"></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    id="placeholder-16"
+  >
+    <path stroke="currentColor" stroke-width="2" d="M1 1h14v14H1z"></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    id="placeholder-24"
+  >
+    <path stroke="currentColor" stroke-width="2" d="M4 4h16v16H4z"></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="play-12"
+  >
+    <path d="M4 10V2l5 4-5 4z" fill="currentColor"></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    id="play-16"
+  >
+    <path d="M5 14V2l8 6-8 6z" fill="currentColor"></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 12"
+    id="plus"
+  >
+    <path
+      d="M6.5 10.5V.5m-5 5h10"
+      stroke="currentColor"
+      stroke-linecap="square"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    id="search-16"
+  >
+    <path
+      d="M12.7 11.3c.9-1.2 1.4-2.6 1.4-4.2 0-3.9-3.1-7.1-7-7.1S0 3.2 0 7.1c0 3.9 3.2 7.1 7.1 7.1 1.6 0 3.1-.5 4.2-1.4l1.4-1.5zm-5.6.8c-2.8 0-5.1-2.2-5.1-5S4.3 2 7.1 2s5.1 2.3 5.1 5.1-2.3 5-5.1 5z"
+      fill="currentColor"
+    ></path>
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M14.557 15.97l-4.264-4.263 1.414-1.414 4.264 4.264-1.414 1.414z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    id="search-24"
+  >
+    <g clip-path="url(#search-24_svg__a)">
+      <path
+        d="M23.809 21.646l-6.205-6.205a9.68 9.68 0 001.857-5.711C19.461 4.365 15.096 0 9.73 0 4.365 0 0 4.365 0 9.73c0 5.366 4.365 9.73 9.73 9.73a9.678 9.678 0 005.487-1.698L21.455 24l2.354-2.354zM2.854 9.73a6.885 6.885 0 016.877-6.877 6.885 6.885 0 016.877 6.877 6.885 6.885 0 01-6.877 6.877A6.884 6.884 0 012.854 9.73z"
+        fill="currentColor"
+      ></path>
+    </g>
+    <defs>
+      <clipPath id="search-24_svg__a">
+        <path fill="#fff" d="M0 0h24v24H0z"></path>
+      </clipPath>
+    </defs></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    id="sun"
+  >
+    <path
+      d="M9 0H7v2h2V0zm5.294 3.052L12.88 1.637 11.466 3.05l1.413 1.414 1.415-1.413zM16 7h-2v2h2V7zm-4.465 6.02l1.415 1.413 1.414-1.415-1.415-1.413-1.414 1.414zM9 14H7v2h2v-2zm-7.434-1.051l1.414 1.414 1.415-1.413-1.414-1.415-1.415 1.414zM2 7H0v2h2V7zm2.465-3.88L3.05 1.707 1.636 3.12l1.415 1.414L4.465 3.12z"
+      fill="currentColor"
+    ></path>
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M4 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4zm4 2a2 2 0 100-4 2 2 0 000 4z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1200 1227"
+    id="twitter"
+  >
+    <path
+      d="M714.163 519.284L1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026zM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 18"
+    id="youtube"
+  >
+    <path
+      d="M19.615.184c-3.604-.246-11.631-.245-15.23 0C.488.45.029 2.804 0 9c.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0C23.512 17.55 23.971 15.196 24 9c-.029-6.185-.484-8.549-4.385-8.816zM9 13V5l8 3.993L9 13z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 22"
+    id="vimeo"
+  >
+    <path
+      d="M22.875 9.063c-2.442 5.217-8.337 12.32-12.063 12.32-3.672 0-4.203-7.832-6.208-13.044-.987-2.565-1.624-1.976-3.474-.68L.002 6.202C2.7 3.831 5.4 1.076 7.059.923c1.868-.179 3.018 1.098 3.448 3.832.568 3.593 1.362 9.17 2.748 9.17 1.08 0 3.741-4.424 3.878-6.006.243-2.316-1.703-2.386-3.392-1.663 2.673-8.754 13.793-7.142 9.134 2.807z"
+      fill="currentColor"
+    ></path></svg
+  ><svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    id="whatsapp"
+  >
+    <path
+      d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.89 9.884 0 2.225.652 3.891 1.747 5.634l-1 3.648 3.743-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.67.149-.197.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.15-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.67-1.611-.916-2.206-.242-.579-.487-.501-.67-.51l-.57-.01c-.197 0-.52.074-.791.372-.272.298-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.57-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+      fill="currentColor"
+    ></path>
+  </svg>
+  <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 26" id="car">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.852.332h17.714l5 8.333h8.767v12H34.33a5.167 5.167 0 0 1-10.328.003H14.33a5.167 5.167 0 0 1-10.328-.003H.666V9.315L7.852.332ZM4.335 18.665a5.169 5.169 0 0 1 9.665.003h10.334a5.169 5.169 0 0 1 9.665-.003h3.334v-8h-7.334v.003H2.666v7.997h1.669Zm-.59-9.997h11.921V2.332H8.813L3.745 8.668Zm13.921-6.336v6.336h10.569l-3.802-6.336h-6.767Zm-8.5 15a3.167 3.167 0 1 0 0 6.333 3.167 3.167 0 0 0 0-6.333Zm20 0a3.167 3.167 0 1 0 0 6.333 3.167 3.167 0 0 0 0-6.333Z" fill="currentColor"/>
+  </svg>
+  <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 39" id="train">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2.668a2.332 2.332 0 0 0-2.334 2.333v22.334h24.667V5a2.332 2.332 0 0 0-2.334-2.333H10ZM5.665 5.001A4.332 4.332 0 0 1 9.999.668h20a4.332 4.332 0 0 1 4.334 4.333v24.334h-4.38l4.275 8.55-1.788.894L31.05 36H8.95l-1.39 2.78-1.788-.895 4.275-8.55H5.666V5Zm6.617 24.334L9.95 34h20.1l-2.333-4.665H12.283Zm.051-22.003h15.333v8.667H12.334V7.332Zm2 2v4.667h11.333V9.332H14.334ZM2.666 10.668v7h-2v-7h2Zm36.668 0v7h-2v-7h2ZM12 22a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm12 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0Z" fill="currentColor"/>
+  </svg>
+  <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 39" id="walk">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.666 5.835A5.167 5.167 0 1 1 13.791 11l-.668 2.841 6.725 5.044 4.503-1.501.632 1.897-5.497 1.832-6.863-5.147L7.307 38.56l-1.946-.458L11.83 10.6a5.168 5.168 0 0 1-3.165-4.764Zm5.167-3.167a3.167 3.167 0 1 0 0 6.333 3.167 3.167 0 0 0 0-6.333Zm-6.158 12.78-3.857 1.928-1.852 5.556-1.898-.633 2.114-6.341 4.599-2.3.894 1.79Zm6.992 8.138L19 27.919v9.748h-2v-8.92L13.252 25l1.415-1.414Z" fill="currentColor"/>
+  </svg>
+  <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" id="cross-big">
+    <path d="m1 1 10 10m0-10L1 11" stroke="currentColor"/>
+  </svg>
+  <svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 12 8"
+    id="caret-down"
+  >
+    <path d="M0 0h12L6 7.5 0 0Z" fill="currentColor"></path>
+  </svg>
+</div>
+
+<script src="https://live.cinematheque.ch/dist/init-immerser.bundle.js"></script>
+<script src="https://live.cinematheque.ch/dist/header.bundle.js"></script>
+<script src="https://live.cinematheque.ch/dist/init-overlays.bundle.js"></script>
+<script src="https://live.cinematheque.ch/dist/tippy.bundle.js"></script>
+<script src="https://live.cinematheque.ch/dist/toggle-dropdown.bundle.js"></script>
+<script src="https://live.cinematheque.ch/dist/reset-filters.bundle.js"></script>
+<script src="https://live.cinematheque.ch/dist/age-filter.bundle.js"></script>
+<script src="https://live.cinematheque.ch/dist/handle-filter-submit.bundle.js"></script>
+    <script src="https://live.cinematheque.ch/dist/init-datepickers.bundle.js"></script>
+  <script src="https://live.cinematheque.ch/dist/collapse-vanilla.bundle.js"></script>
+
+</body>
+</html>
