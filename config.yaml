@@ -25,9 +25,12 @@ directors:
   - name: Brady Corbet        # The Brutalist
 
 # --- Cinémathèque suisse -----------------------------------------------------
-# Screenings on live.cinematheque.ch announced "en présence" of a director above.
+# Screenings on live.cinematheque.ch announced "en présence" of a guest.
+# guests: mine = only the directors above, directors = any film-maker, all = anyone
 cinematheque:
   enabled: true
+  guests: directors
+  lookback_days: 30     # keep recent past screenings in the calendar
 
 # --- Festivals ---------------------------------------------------------------
 # Edit these by hand. `tentative: true` = estimated from previous years and not

@@ -194,6 +194,28 @@ def fold(s):
     return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()
 
 
+def guest_of(sentence, made_by, directors, mode):
+    """Name of the guest in an "en présence ..." sentence, if `mode` wants it.
+
+    mode: "mine" = only my directors, "directors" = any film-maker, "all" = anyone.
+    """
+    role = re.search(r"en présence d(?:u|e la|es) (?:réalisat|cinéaste)\w*\s*(.*)", sentence, re.I)
+    if role:   # "du réalisateur" = the film's director; "du cinéaste Wim Wenders" names them
+        name = re.split(r",| et | pour | qui | lors ", role[1])[0].strip() or made_by
+    elif named := re.search(r"en présence de (?:l[ae] |l')?(.+)", sentence, re.I):
+        name = re.split(r",| et | pour | qui | lors ", named[1])[0].strip()
+    else:
+        return None
+    if not name:
+        return None
+    mine = next((n for n in directors if fold(n) in fold(name) or fold(n) in fold(sentence)), None)
+    if mine:
+        return mine
+    if mode == "all" or (mode == "directors" and (role or fold(name) in fold(made_by))):
+        return name
+    return None
+
+
 def get_soup(url):
     r = HTTP.get(url, timeout=30)
     r.raise_for_status()
@@ -201,15 +223,18 @@ def get_soup(url):
 
 
 def cinematheque_events(cfg):
-    """Screenings at the Cinémathèque announced 'en présence' of one of the directors.
+    """Screenings at the Cinémathèque announced 'en présence' of a guest.
 
     Crawls the programme's cycles, then each film page, which carries lines like
     "Séance du 30 septembre en présence du réalisateur" and a list of sessions.
     """
     if not cfg.get("cinematheque", {}).get("enabled"):
         return []
+    cc = cfg["cinematheque"]
     tz = cfg["calendar"]["timezone"]
     directors = [d["name"] for d in cfg.get("directors", [])]
+    mode = cc.get("guests", "directors")
+    since = TODAY - dt.timedelta(days=cc.get("lookback_days", 0))
 
     index = get_soup(CS + "?interval=events")
     lists = {CS} | {requests.compat.urljoin(CS, a["href"]) for a in index.find_all("a", href=True)
@@ -238,24 +263,24 @@ def cinematheque_events(cfg):
         sessions = [(dt.datetime(int(y), MONTHS[mo.lower()], int(d), int(h), int(mi)))
                     for d, mo, y, h, mi in SESSION.findall(text.split("Séance(s)")[-1].replace("\n", " "))]
 
-        # Which of our directors is present, and on which days ("Séance du 30 septembre")
-        who, days, note = None, set(), ""
+        # Who is present, and on which days ("Séance du 30 septembre en présence du réalisateur")
+        guests, days, note = [], set(), ""
         for sentence in {s.strip() for s in PRESENCE.findall(text)}:
-            named = next((n for n in directors if fold(n) in fold(sentence)), None)
-            if not named and re.search(r"réalisat|cinéaste", sentence, re.I):
-                named = next((n for n in directors if fold(n) in fold(made_by)), None)
-            if not named:
+            guest = guest_of(sentence, made_by, directors, mode)
+            if not guest:
+                log(f"    skipped: {title}: {sentence}")
                 continue
-            who = named
+            guests.append(guest)
             if day := DAY_MONTH.search(sentence):
                 days.add((int(day[1]), MONTHS[day[2].lower()]))
                 note = sentence
             note = note or sentence
-        if not who:
+        if not guests:
             continue
+        who = guests[0]
         # No day given: the guest could be at any of the sessions, so list them all
         for start in sorted({s for s in sessions if not days or (s.day, s.month) in days}):
-            if start.date() < TODAY:
+            if start.date() < since:
                 continue
             ev = Event()
             ev.add("uid", uid(f"cs|{url}|{start:%Y%m%d%H%M}"))
