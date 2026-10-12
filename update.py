@@ -131,7 +131,7 @@ def film_events(cfg):
     region = films.get("region")
     fallbacks = films.get("fallback_countries", [])
     cutoff = TODAY - dt.timedelta(days=films.get("lookback_days", 60))
-    events = []
+    found = {}  # TMDB id -> film; co-directed films (e.g. the Daniels) appear once
 
     for d in cfg.get("directors", []):
         pid = find_director(d)
@@ -143,6 +143,9 @@ def film_events(cfg):
             if m.get("job") != "Director" or m["id"] in seen:
                 continue
             seen.add(m["id"])
+            if m["id"] in found:
+                found[m["id"]]["by"].append(d["name"])
+                continue
             # Skip old films early to save requests. Undated = upcoming.
             if m.get("release_date") and dt.date.fromisoformat(m["release_date"]) < cutoff - dt.timedelta(days=365):
                 continue
@@ -163,19 +166,23 @@ def film_events(cfg):
             if not when or when < cutoff:
                 continue
 
-            confirmed = where in (region, country)
-            suffix = "" if confirmed else f" ({where} – CH TBC)"
-            label = {"romandie": "Suisse romande", "deutschschweiz": "Deutschschweiz",
-                     "ticino": "Svizzera italiana"}.get(where, where)
-            events.append(all_day(
-                f"🎬 {title} — {d['name']}{suffix}",
-                when,
-                key=f"film|{m['id']}",
-                description=f"Sortie {label}.",
-                url=f"https://www.themoviedb.org/movie/{m['id']}",
-                tentative=not confirmed,
-            ))
+            found[m["id"]] = {"title": title, "when": when, "where": where, "by": [d["name"]]}
             log(f"    {when} {title} [{where}]")
+
+    events = []
+    for tmdb_id, f in found.items():
+        confirmed = f["where"] in (region, country)
+        suffix = "" if confirmed else f" ({f['where']} – CH TBC)"
+        label = {"romandie": "Suisse romande", "deutschschweiz": "Deutschschweiz",
+                 "ticino": "Svizzera italiana"}.get(f["where"], f["where"])
+        events.append(all_day(
+            f"🎬 {f['title']} — {' & '.join(f['by'])}{suffix}",
+            f["when"],
+            key=f"film|{tmdb_id}",
+            description=f"Sortie {label}.",
+            url=f"https://www.themoviedb.org/movie/{tmdb_id}",
+            tentative=not confirmed,
+        ))
     return events
 
 
