@@ -9,7 +9,7 @@ BEGIN:VEVENT
 SUMMARY:🎬 Dune: Part Three — Denis Villeneuve
 DTSTART;VALUE=DATE:20261216
 DTEND;VALUE=DATE:20261217
-DTSTAMP:20261011T135421Z
+DTSTAMP:20261012T184755Z
 UID:f161f766f713fad7@cultural-calendar
 DESCRIPTION:Sortie Suisse romande.
 TRANSP:TRANSPARENT
@@ -19,7 +19,7 @@ BEGIN:VEVENT
 SUMMARY:🎪 Rencontres 7e Art Lausanne (?)
 DTSTART;VALUE=DATE:20270304
 DTEND;VALUE=DATE:20270315
-DTSTAMP:20261011T135424Z
+DTSTAMP:20261012T184755Z
 UID:4cdc606be8515c10@cultural-calendar
 DESCRIPTION:Dates estimées\, pas encore annoncées.
 STATUS:TENTATIVE
@@ -30,7 +30,7 @@ BEGIN:VEVENT
 SUMMARY:🎟 Billetterie ouverte: Rencontres 7e Art Lausanne (?)
 DTSTART;VALUE=DATE:20270220
 DTEND;VALUE=DATE:20270221
-DTSTAMP:20261011T135424Z
+DTSTAMP:20261012T184755Z
 UID:03386b5f7bbd0ff6@cultural-calendar
 DESCRIPTION:Date estimée.
 STATUS:TENTATIVE
@@ -41,7 +41,7 @@ BEGIN:VEVENT
 SUMMARY:🎪 Cully Jazz Festival (?)
 DTSTART;VALUE=DATE:20270402
 DTEND;VALUE=DATE:20270411
-DTSTAMP:20261011T135424Z
+DTSTAMP:20261012T184755Z
 UID:53c7fefeada38140@cultural-calendar
 DESCRIPTION:Dates estimées\, pas encore annoncées.
 STATUS:TENTATIVE
@@ -52,7 +52,7 @@ BEGIN:VEVENT
 SUMMARY:📣 Premiers noms: Cully Jazz Festival (?)
 DTSTART;VALUE=DATE:20261203
 DTEND;VALUE=DATE:20261204
-DTSTAMP:20261011T135424Z
+DTSTAMP:20261012T184755Z
 UID:c7097fa4050dd435@cultural-calendar
 DESCRIPTION:Date estimée.
 STATUS:TENTATIVE
@@ -63,7 +63,7 @@ BEGIN:VEVENT
 SUMMARY:📖 Programme: Cully Jazz Festival (?)
 DTSTART;VALUE=DATE:20270114
 DTEND;VALUE=DATE:20270115
-DTSTAMP:20261011T135424Z
+DTSTAMP:20261012T184755Z
 UID:6163788932ac7a22@cultural-calendar
 DESCRIPTION:Date estimée.
 STATUS:TENTATIVE
@@ -75,7 +75,7 @@ SUMMARY:🎥 Blue Moon — en présence de Richard Linklater (Cinémathèq
  ue)
 DTSTART;TZID=Europe/Zurich:20260930T203000
 DTEND;TZID=Europe/Zurich:20260930T230000
-DTSTAMP:20261011T135429Z
+DTSTAMP:20261012T184806Z
 UID:bd271d9989e0029a@cultural-calendar
 DESCRIPTION:Séance du 30 septembre en présence du réalisateur
 LOCATION:Cinémathèque suisse – Capitole\, Av. du Théâtre 6\, Lausann
@@ -87,7 +87,7 @@ SUMMARY:🎥 Boyhood — en présence de Richard Linklater (Cinémathèque
  )
 DTSTART;TZID=Europe/Zurich:20261001T200000
 DTEND;TZID=Europe/Zurich:20261001T223000
-DTSTAMP:20261011T135429Z
+DTSTAMP:20261012T184807Z
 UID:8bfdb9b6f6d95323@cultural-calendar
 DESCRIPTION:Séance du 1er octobre en présence du réalisateur
 LOCATION:Cinémathèque suisse – Capitole\, Av. du Théâtre 6\, Lausann
@@ -95,11 +95,47 @@ LOCATION:Cinémathèque suisse – Capitole\, Av. du Théâtre 6\, Lausann
 URL:https://live.cinematheque.ch/films/boyhood
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:🎥 Claude Ruey: Le souci de liberté — en présence de Claude 
+ Ruey (Cinémathèque)
+DTSTART;TZID=Europe/Zurich:20261208T183000
+DTEND;TZID=Europe/Zurich:20261208T210000
+DTSTAMP:20261012T184808Z
+UID:1466a75495f44369@cultural-calendar
+DESCRIPTION:En présence de Claude Ruey et Ariane Dayer
+LOCATION:Cinémathèque suisse – Capitole\, Av. du Théâtre 6\, Lausann
+ e
+URL:https://live.cinematheque.ch/films/claude-ruey-le-souci-de-libert
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🎥 Confusion Na Wa — en présence de Kenneth Gyang (Cinémath
+ èque)
+DTSTART;TZID=Europe/Zurich:20261118T203000
+DTEND;TZID=Europe/Zurich:20261118T230000
+DTSTAMP:20261012T184808Z
+UID:01a3fa0c93028adb@cultural-calendar
+DESCRIPTION:En présence du réalisateur
+LOCATION:Cinémathèque suisse – Capitole\, Av. du Théâtre 6\, Lausann
+ e
+URL:https://live.cinematheque.ch/films/confusion-na-wa
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🎥 Frank & Louis — en présence de Petra Volpe (Cinémathèque
+ )
+DTSTART;TZID=Europe/Zurich:20261106T203000
+DTEND;TZID=Europe/Zurich:20261106T230000
+DTSTAMP:20261012T184811Z
+UID:3bc8cf629aa740a5@cultural-calendar
+DESCRIPTION:en présence de la réalisatrice
+LOCATION:Cinémathèque suisse – Capitole\, Av. du Théâtre 6\, Lausann
+ e
+URL:https://live.cinematheque.ch/films/frank-louis
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:🎥 Der Stand der Dinge — en présence de Wim Wenders (Cinémat
  hèque)
 DTSTART;TZID=Europe/Zurich:20261006T200000
 DTEND;TZID=Europe/Zurich:20261006T223000
-DTSTAMP:20261011T135432Z
+DTSTAMP:20261012T184816Z
 UID:4fa8744a761845b0@cultural-calendar
 DESCRIPTION:en présence du réalisateur
 LOCATION:Cinémathèque suisse – Capitole\, Av. du Théâtre 6\, Lausann
@@ -107,15 +143,51 @@ LOCATION:Cinémathèque suisse – Capitole\, Av. du Théâtre 6\, Lausann
 URL:https://live.cinematheque.ch/films/l-etat-des-choses
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:🎥 Der Stand der Dinge — en présence de Wim Wenders (Cinémat
+ hèque)
+DTSTART;TZID=Europe/Zurich:20261112T180000
+DTEND;TZID=Europe/Zurich:20261112T203000
+DTSTAMP:20261012T184816Z
+UID:931dfb06f594c7c5@cultural-calendar
+DESCRIPTION:en présence du réalisateur
+LOCATION:Cinémathèque suisse – Capitole\, Av. du Théâtre 6\, Lausann
+ e
+URL:https://live.cinematheque.ch/films/l-etat-des-choses
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🎥 Monsoon Wedding — en présence de Mira Nair (Cinémathèque
+ )
+DTSTART;TZID=Europe/Zurich:20261101T180000
+DTEND;TZID=Europe/Zurich:20261101T203000
+DTSTAMP:20261012T184818Z
+UID:30f3e97ac2ec7cb7@cultural-calendar
+DESCRIPTION:En présence de la réalisatrice
+LOCATION:Cinémathèque suisse – Capitole\, Av. du Théâtre 6\, Lausann
+ e
+URL:https://live.cinematheque.ch/films/le-mariage-des-moussons
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:🎥 Le Milieu du monde — en présence de Jacob Berger (Cinémat
  hèque)
 DTSTART;TZID=Europe/Zurich:20261022T200000
 DTEND;TZID=Europe/Zurich:20261022T223000
-DTSTAMP:20261011T135433Z
+DTSTAMP:20261012T184819Z
 UID:ecfa102a21dc7d06@cultural-calendar
 DESCRIPTION:Soirée Vidy Tanner en présence de Jacob Berger
 LOCATION:Cinémathèque suisse – Capitole\, Av. du Théâtre 6\, Lausann
  e
 URL:https://live.cinematheque.ch/films/le-milieu-du-monde
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🎥 Le Poisson Arc-en-ciel — en présence de Florian Moch (Cin
+ émathèque)
+DTSTART;TZID=Europe/Zurich:20261125T150000
+DTEND;TZID=Europe/Zurich:20261125T173000
+DTSTAMP:20261012T184819Z
+UID:0d8d7ee029944381@cultural-calendar
+DESCRIPTION:Séance en présence du réalisateur
+LOCATION:Cinémathèque suisse – Capitole\, Av. du Théâtre 6\, Lausann
+ e
+URL:https://live.cinematheque.ch/films/le-poisson-arc-en-ciel
 END:VEVENT
 END:VCALENDAR
