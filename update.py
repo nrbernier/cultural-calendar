@@ -285,8 +285,12 @@ def cinematheque_events(cfg):
         if not guests:
             continue
         who = guests[0]
-        # No day given: the guest could be at any of the sessions, so list them all
-        for start in sorted({s for s in sessions if not days or (s.day, s.month) in days}):
+        # No day given: guests usually come to the first screening, so take only that one
+        if days:
+            picks = sorted({s for s in sessions if (s.day, s.month) in days})
+        else:
+            picks = sorted(set(sessions))[:1]
+        for start in picks:
             if start.date() < since:
                 continue
             ev = Event()
