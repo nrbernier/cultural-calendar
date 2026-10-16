@@ -66,3 +66,12 @@ festivals:
           - date: 2027-01-14
             type: program     # full IN program + ticketing opens at noon (2026: 15 Jan)
             tentative: true
+
+  - name: Swiss Coffee Connection
+    url: https://swisscoffeeconnection.ch
+    editions:
+      - start: 2026-10-10
+        end: 2026-10-11       # 9th edition, Espace Amaretto, Lausanne
+      - start: 2027-10-09
+        end: 2027-10-10
+        tentative: true       # usually a weekend in early/mid October
