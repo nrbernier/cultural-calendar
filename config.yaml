@@ -75,3 +75,21 @@ festivals:
       - start: 2027-10-09
         end: 2027-10-10
         tentative: true       # usually a weekend in early/mid October
+
+  - name: Festival Salamandre (Morges)
+    url: https://festival-salamandre.org
+    editions:
+      - start: 2026-10-23
+        end: 2026-10-25       # Parc de Vertou
+      - start: 2027-10-22
+        end: 2027-10-24
+        tentative: true       # usually Fri–Sun in late October
+
+  - name: Diabolo Festival (Morges)
+    url: https://diabolofestival.ch
+    editions:
+      - start: 2026-06-20
+        end: 2026-06-21       # Théâtre de Beausobre
+      - start: 2027-06-19
+        end: 2027-06-20
+        tentative: true       # usually a weekend in mid/late June
