@@ -1,5 +1,5 @@
 200 https://live.cinematheque.ch/?interval=events https://live.cinematheque.ch/?interval=events
 200 https://live.cinematheque.ch/films/blue-moon https://live.cinematheque.ch/films/blue-moon
 200 https://live.cinematheque.ch/?interval=week https://live.cinematheque.ch/?interval=week
-200 https://search.ch/kino/Nouvelle-Vague https://search.ch/cine/?q=Nouvelle%20Vague
+404 https://search.ch/kino/?q=Nouvelle%20Vague https://search.ch/cine/?q=Nouvelle%20Vague
 200 https://search.ch/kino/?q=One%20Battle%20After%20Another https://search.ch/cine/?q=One%20Battle%20After%20Another
